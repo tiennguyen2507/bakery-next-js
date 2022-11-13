@@ -3,11 +3,14 @@ import Link from "next/link";
 import React from "react";
 import logo from "../assets/logo.png";
 import { MenuOutlined } from "@ant-design/icons";
+import GIcon from "./GIcon";
 
 const Header = () => {
   return (
-    <div className="h-16 flex justify-between items-center px-5 ">
-      <MenuOutlined />
+    <div className="bg-white sticky top-0 right-0 left-0 h-16 flex justify-between items-center px-5">
+      <GIcon>
+        <MenuOutlined />
+      </GIcon>
       <Image src={logo} alt="log" height={50} />
       <Link href="/about" className="text-black">
         about
