@@ -9,7 +9,7 @@ export default function App({}: TProps) {
       <Header />
       <SideBar />
       <div className="p-2">
-        <p>
+        <p className="break-normal">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
           expedita in consequatur dolores libero illum recusandae rem doloribus
           minima atque at quasi quaerat ducimus odit ad, eveniet vero aperiam
