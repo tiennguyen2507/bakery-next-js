@@ -7,7 +7,7 @@ import GIcon from "./GIcon";
 
 const Header = () => {
   return (
-    <div className="bg-white sticky top-0 right-0 left-0 h-16 flex justify-between items-center">
+    <div className="bg-white sticky top-0 right-0 left-0 h-16 flex justify-between items-center px-2">
       <GIcon>
         <MenuOutlined />
       </GIcon>
