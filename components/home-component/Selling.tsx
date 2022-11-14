@@ -12,7 +12,7 @@ const listSelling = [
     image: slide01,
   },
   {
-    name: "Bánh bông lan trứng muối",
+    name: "Bánh bông lan trứng muối ",
     taste: "trứng muối",
     price: "300.000đ",
     size: "M",
