@@ -1,17 +1,29 @@
 import "../styles/globals.scss";
 import "antd/dist/antd.css";
 import type { AppProps } from "next/app";
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
+import type { ComponentType } from "react";
+import React from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+type TLayoutComponent = AppProps & {
+  Component: AppProps["Component"] & {
+    PageLayout?: React.ComponentType<any>;
+  };
+};
+
+export default function App({ Component, pageProps }: TLayoutComponent) {
   return (
     <>
-      <Header />
-      <SideBar />
-      <div className="pb-16">
-        <Component {...pageProps} />
-      </div>
+      {Component.PageLayout ? (
+        <Component.PageLayout>
+          <div className="pb-16 mx-auto min-h-screen">
+            <Component {...pageProps} />
+          </div>
+        </Component.PageLayout>
+      ) : (
+        <div className="pb-16">
+          <Component {...pageProps} />
+        </div>
+      )}
     </>
   );
 }

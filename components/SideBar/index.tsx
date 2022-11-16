@@ -10,7 +10,10 @@ import Link from "next/link";
 
 const SideBar = () => {
   return (
-    <div className="container mx-auto bg-white fixed bottom-0 right-0 left-0 h-16 grid grid-cols-4 items-center justify-center z-10 shadow">
+    <div
+      style={{ maxWidth: "480px" }}
+      className=" mx-auto bg-white fixed bottom-0 right-0 left-0 h-16 grid grid-cols-4 items-center justify-center z-10 "
+    >
       <Link href={"/"} className="flex items-center justify-center">
         <GIcon>
           <HomeOutlined className="text-3xl !text-gray-300" />

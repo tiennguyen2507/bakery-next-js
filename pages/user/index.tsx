@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import slide01 from "../../assets/cakeVector.png";
 import logoGoogle from "../../assets/logoGoogle.png";
+import Layout from "../../Layout";
 
 const User = () => {
   return (
@@ -44,5 +45,7 @@ const User = () => {
     </div>
   );
 };
+
+User.PageLayout = Layout;
 
 export default User;

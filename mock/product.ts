@@ -4,6 +4,7 @@ import slide03 from "../assets/slide03.jpg";
 
 export const listCard = [
   {
+    id: "45645",
     name: "Bánh su kem lớn",
     taste: "mat cha",
     price: 200000,
@@ -12,6 +13,7 @@ export const listCard = [
     amount: 2,
   },
   {
+    id: "546456",
     name: "Bánh bông lan",
     taste: "trứng muối",
     price: 300000,
@@ -20,6 +22,7 @@ export const listCard = [
     amount: 1,
   },
   {
+    id: "324234",
     name: "Bánh kem siêu nhân",
     taste: "bình thường",
     price: 150000,

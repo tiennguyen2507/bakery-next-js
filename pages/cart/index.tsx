@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Layout from "../../Layout";
 import { listCard } from "../../mock/product";
 import { formatMoney } from "../../util";
 
@@ -80,5 +81,7 @@ const Cart = () => {
     </div>
   );
 };
+
+Cart.PageLayout = Layout;
 
 export default Cart;

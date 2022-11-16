@@ -1,44 +1,28 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import slide01 from "../../assets/slide01.jpg";
 import slide02 from "../../assets/slide02.jpg";
 import slide03 from "../../assets/slide03.jpg";
-
-const listSelling = [
-  {
-    name: "Bánh su kem lớn",
-    taste: "mat cha",
-    price: "200.000đ",
-    size: "L",
-    image: slide01,
-  },
-  {
-    name: "Bánh bông lan trứng muối ",
-    taste: "trứng muối",
-    price: "300.000đ",
-    size: "M",
-    image: slide02,
-  },
-  {
-    name: "Bánh kem siêu nhân",
-    taste: "bình thường",
-    price: "150.000đ",
-    size: "S",
-    image: slide03,
-  },
-];
+import { listCard } from "../../mock/product";
 
 type Props = {};
 
 const Category = (props: Props) => {
+  const router = useRouter();
   return (
     <div className="my-4 ">
       <h2 className="text-[#59519D]">Bán chạy</h2>
       <div className="rounded-xl">
-        {listSelling.map(({ name, price, taste, image, size }, index) => {
+        {listCard.map(({ name, price, taste, image, size, id }, index) => {
           return (
             <div
               className="bg-[#F6F8FA] mb-4 rounded-xl flex items-start gap-4 p-2 relative shadow-lg cursor-pointer active:bg-slate-100"
               key={index}
+              onClick={() =>
+                router.push({
+                  pathname: `/cart/${id}`,
+                })
+              }
             >
               <Image
                 src={image}
