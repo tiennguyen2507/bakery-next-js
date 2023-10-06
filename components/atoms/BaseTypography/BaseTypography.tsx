@@ -8,7 +8,7 @@ interface BaseTextProps {
   children: ReactNode;
 }
 
-export default function BaseText({
+export default function BaseTypography({
   children,
   size = "16",
   weight = "400",

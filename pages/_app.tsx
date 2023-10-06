@@ -1,7 +1,6 @@
-import "../styles/globals.scss";
+import "styles/globals.scss";
 import "antd/dist/antd.css";
 import type { AppProps } from "next/app";
-import type { ComponentType } from "react";
 import React from "react";
 
 type TLayoutComponent = AppProps & {

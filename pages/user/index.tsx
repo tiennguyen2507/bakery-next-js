@@ -4,9 +4,9 @@ import React from "react";
 import slide01 from "assets/cakeVector.png";
 import logoGoogle from "assets/logoGoogle.png";
 import Layout from "layout";
-import BaseInput from "@/layout/atoms/BaseInput";
-import BaseButton from "@/layout/atoms/BaseButton";
-import BaseTypography from "@/layout/atoms/BaseTypography";
+import BaseInput from "components/atoms/BaseInput/BaseInput";
+import BaseButton from "components/atoms/BaseButton/BaseButton";
+import BaseTypography from "components/atoms/BaseTypography";
 
 const User = (): JSX.Element => {
   return (
