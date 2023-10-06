@@ -5,7 +5,7 @@ import slide02 from "../assets/slide02.jpg";
 import slide03 from "../assets/slide03.jpg";
 import Category from "../components/home-component/Category";
 import Selling from "../components/home-component/Selling";
-import Layout from "../Layout";
+import Layout from "../layout";
 
 type TProps = {};
 

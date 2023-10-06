@@ -1,21 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "assets/logo.png";
 import { InfoCircleOutlined, MenuOutlined } from "@ant-design/icons";
-import GIcon from "./GIcon";
+import BaseIcon from "./atoms/GIcon";
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
-    <div className="bg-white sticky top-0 right-0 left-0 h-16 flex justify-between items-center px-2 z-50">
-      <GIcon>
+    <div
+      className="bg-white sticky top-0 right-0 left-0 h-16 
+    flex justify-between items-center px-2 z-50"
+    >
+      <BaseIcon>
         <MenuOutlined />
-      </GIcon>
+      </BaseIcon>
       <Image src={logo} alt="log" height={50} />
       <Link href="/about" className="text-black">
-        <GIcon>
+        <BaseIcon>
           <InfoCircleOutlined className="text-xl !text-black-300" />
-        </GIcon>
+        </BaseIcon>
       </Link>
     </div>
   );

@@ -4,7 +4,7 @@ type TProps = {
   children: ReactNode;
 };
 
-const GIcon: FC<TProps> = ({ children }) => {
+const BaseIcon: FC<TProps> = ({ children }) => {
   return (
     <button className="active:bg-blue-50 rounded-full w-10 h-10 flex justify-center items-center">
       {children}
@@ -12,4 +12,4 @@ const GIcon: FC<TProps> = ({ children }) => {
   );
 };
 
-export default GIcon;
+export default BaseIcon;
