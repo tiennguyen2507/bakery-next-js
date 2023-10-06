@@ -6,7 +6,7 @@ import logoGoogle from "@/assets/logoGoogle.png";
 import BaseInput from "components/atoms/BaseInput/BaseInput";
 import BaseButton from "components/atoms/BaseButton/BaseButton";
 import BaseTypography from "components/atoms/BaseTypography";
-import Layout from "../../layout";
+import Layout from "layout/Layout";
 
 const User = (): JSX.Element => {
   return (
