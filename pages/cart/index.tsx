@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { formatMoney } from "lib/index";
-import Layout from "layout/index";
+import { formatMoney } from "lib";
+import Layout from "layout";
 import { listCard } from "mock/product";
 
 const Cart = () => {

@@ -1,11 +1,11 @@
 import { Carousel } from "antd";
 import Image from "next/image";
-import slide01 from "../assets/slide01.jpg";
-import slide02 from "../assets/slide02.jpg";
-import slide03 from "../assets/slide03.jpg";
-import Category from "../components/home-component/Category";
-import Selling from "../components/home-component/Selling";
-import Layout from "../layout";
+import slide01 from "assets/slide01.jpg";
+import slide02 from "assets/slide02.jpg";
+import slide03 from "assets/slide03.jpg";
+import Category from "components/home-component/Category";
+import Selling from "components/home-component/Selling";
+import Layout from "layout";
 
 type TProps = {};
 

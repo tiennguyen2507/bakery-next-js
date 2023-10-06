@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Layout from "layout/index";
+import Layout from "layout";
 import { listCard } from "mock/product";
-import { formatMoney } from "lib/index";
+import { formatMoney } from "lib";
 
 type Props = {
   user: any;
