@@ -3,10 +3,10 @@ import Image from "next/image";
 import React from "react";
 import slide01 from "@/assets/cakeVector.png";
 import logoGoogle from "@/assets/logoGoogle.png";
-import BaseInput from "@components/atoms/BaseInput/BaseInput";
-import BaseButton from "@components/atoms/BaseButton/BaseButton";
-import BaseTypography from "@components/atoms/BaseTypography";
-import Layout from "@layout/index";
+import BaseInput from "components/atoms/BaseInput/BaseInput";
+import BaseButton from "components/atoms/BaseButton/BaseButton";
+import BaseTypography from "components/atoms/BaseTypography";
+import Layout from "layout/index";
 
 const User = (): JSX.Element => {
   return (
