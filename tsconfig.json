@@ -14,16 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@layout/*": ["./layout/*"],
-      "@components/*": ["./components/*"],
-      "@services/*": ["./services/*"],
-      "@interfaces/*": ["./interfaces/*"],
-      "@lib/*": ["./lib/*"],
-      "@mock/*": ["./mock/*"],
-      "@styles/*": ["./styles/*"]
+      "@layout/*": ["layout/*"],
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@lib/*": ["lib/*"],
+      "@mock/*": ["mock/*"],
+      "@styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/SideBar"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
