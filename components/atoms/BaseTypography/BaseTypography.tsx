@@ -10,16 +10,7 @@ interface BaseTextProps {
 
 export default function BaseTypography({
   children,
-  size = "16",
-  weight = "400",
   className = "",
 }: BaseTextProps) {
-  return (
-    <p
-      style={{ fontSize: `${size}px`, fontWeight: weight }}
-      className={className}
-    >
-      {children}
-    </p>
-  );
+  return <p className={className}>{children}</p>;
 }

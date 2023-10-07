@@ -16,7 +16,7 @@ const BaseInput: FunctionComponent<BaseInputProps> = ({
   return (
     <div className={className}>
       {label && (
-        <label htmlFor="1" className="font-medium">
+        <label htmlFor="1" className="text-lg font-medium">
           {label}
         </label>
       )}
