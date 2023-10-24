@@ -6,7 +6,7 @@ const withLayoutDefault = <P extends object>(
 ) => {
   const WithLayout: React.FC<P> = (props) => (
     <div className="bg-blue-100 min-h-screen flex items-center justify-center">
-      <div style={{ maxWidth: 500 }} className="bg-white min-h-screen">
+      <div style={{ width: 500 }} className="bg-white min-h-screen">
         <main>
           <WrappedComponent {...props} />
         </main>
