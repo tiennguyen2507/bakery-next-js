@@ -69,13 +69,7 @@ const Product: FunctionComponent<Props> = ({ user }) => {
 
 export const getServerSideProps = ({ params }: { params: any }) => {
   const resuft = listCard.find((value) => value.id === params.id);
-  console.log(resuft);
-
-  return {
-    props: {
-      user: resuft,
-    }, // will be passed to the page component as props
-  };
+  return { props: { user: resuft } };
 };
 
 export default withLayoutUser(Product);
