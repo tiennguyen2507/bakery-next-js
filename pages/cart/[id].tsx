@@ -1,14 +1,14 @@
 import Image from "next/image";
-import React from "react";
-import Layout from "layout";
+import React, { FunctionComponent } from "react";
 import { listCard } from "mock/product";
 import { formatMoney } from "lib";
+import withLayoutUser from "layout/withLayoutUser";
 
 type Props = {
   user: any;
 };
 
-const Product = ({ user }: Props) => {
+const Product: FunctionComponent<Props> = ({ user }) => {
   return (
     <div className="p-4">
       <Image
@@ -67,10 +67,6 @@ const Product = ({ user }: Props) => {
   );
 };
 
-Product.PageLayout = Layout;
-
-export default Product;
-
 export const getServerSideProps = ({ params }: { params: any }) => {
   const resuft = listCard.find((value) => value.id === params.id);
   console.log(resuft);
@@ -81,3 +77,5 @@ export const getServerSideProps = ({ params }: { params: any }) => {
     }, // will be passed to the page component as props
   };
 };
+
+export default withLayoutUser(Product);

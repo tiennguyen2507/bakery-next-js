@@ -1,10 +1,8 @@
-import React from "react";
-import Layout from "layout";
+import withLayoutUser from "layout/withLayoutUser";
+import React, { FunctionComponent } from "react";
 
-const Like = () => {
+const Like: FunctionComponent = () => {
   return <div>Like</div>;
 };
 
-Like.PageLayout = Layout;
-
-export default Like;
+export default withLayoutUser(Like);

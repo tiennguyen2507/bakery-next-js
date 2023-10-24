@@ -5,11 +5,10 @@ import slide02 from "assets/slide02.jpg";
 import slide03 from "assets/slide03.jpg";
 import Category from "components/home-component/Category";
 import Selling from "components/home-component/Selling";
-import Layout from "layout/Layout";
+import { FunctionComponent } from "react";
+import withLayoutUser from "layout/withLayoutUser";
 
-type TProps = {};
-
-export default function App({}: TProps) {
+const App: FunctionComponent = () => {
   return (
     <div className="container mx-auto p-4 rounded-2xl">
       <Carousel className="rounded-2xl">
@@ -21,6 +20,6 @@ export default function App({}: TProps) {
       <Selling />
     </div>
   );
-}
+};
 
-App.PageLayout = Layout;
+export default withLayoutUser(App);

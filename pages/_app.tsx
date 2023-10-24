@@ -1,7 +1,7 @@
 import BaseLoading from "components/atoms/BaseLoading";
 import "styles/index.scss";
 import "antd/dist/antd.css";
-import React, { Suspense } from "react";
+import React from "react";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 
@@ -26,21 +26,7 @@ export default function App({ Component, pageProps }: TLayoutComponent) {
     router.events.on("routeChangeError", handleComplete);
   }, [router]);
 
-  const renderContent = (): JSX.Element => (
-    <>
-      {Component.PageLayout ? (
-        <Component.PageLayout>
-          <div className="pb-16 mx-auto min-h-screen">
-            <Component {...pageProps} />
-          </div>
-        </Component.PageLayout>
-      ) : (
-        <div className="pb-16">
-          <Component {...pageProps} />
-        </div>
-      )}
-    </>
-  );
+  const renderContent = (): JSX.Element => <Component {...pageProps} />;
 
   if (pageLoading) {
     return (

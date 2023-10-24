@@ -1,8 +1,9 @@
 import BaseButton from "components/atoms/BaseButton";
-import Layout from "layout/Layout";
+import withLayoutUser from "layout/withLayoutUser";
 import { useRouter } from "next/router";
+import { FunctionComponent } from "react";
 
-const User = (): JSX.Element => {
+const User: FunctionComponent = () => {
   const router = useRouter();
   const onLogOut = (): void => {
     router.push("/sign-in");
@@ -15,6 +16,4 @@ const User = (): JSX.Element => {
   );
 };
 
-User.PageLayout = Layout;
-
-export default User;
+export default withLayoutUser(User);

@@ -6,8 +6,8 @@ import logoGoogle from "assets/logoGoogle.png";
 import BaseInput from "components/atoms/BaseInput/BaseInput";
 import BaseButton from "components/atoms/BaseButton/BaseButton";
 import BaseTypography from "components/atoms/BaseTypography";
-import LayoutDefault from "layout/LayoutDefault";
 import { useRouter } from "next/router";
+import withLayoutDefault from "layout/withLayoutDefault";
 
 const User = (): JSX.Element => {
   const router = useRouter();
@@ -51,6 +51,4 @@ const User = (): JSX.Element => {
   );
 };
 
-User.PageLayout = LayoutDefault;
-
-export default User;
+export default withLayoutDefault(User);

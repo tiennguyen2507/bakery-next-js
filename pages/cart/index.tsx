@@ -1,10 +1,10 @@
 import Image from "next/image";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { formatMoney } from "lib";
-import Layout from "layout";
 import { listCard } from "mock/product";
+import withLayoutUser from "layout/withLayoutUser";
 
-const Cart = () => {
+const Cart: FunctionComponent = () => {
   return (
     <div className="p-4">
       <h2 className="text-[#59519D] font-bold text-center py-4">
@@ -82,6 +82,4 @@ const Cart = () => {
   );
 };
 
-Cart.PageLayout = Layout;
-
-export default Cart;
+export default withLayoutUser(Cart);
