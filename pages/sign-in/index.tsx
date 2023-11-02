@@ -1,7 +1,3 @@
-import { Divider } from "antd";
-import Image from "next/image";
-import React from "react";
-import logoGoogle from "assets/logoGoogle.png";
 import withLayoutDefault from "layout/withLayoutDefault";
 import TopSignIn from "./elements/TopSignIn";
 import FormSignIn from "./elements/FormSignIn";
