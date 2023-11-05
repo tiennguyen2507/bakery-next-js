@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 const FormSignInSchema = z.object({
   email: z
@@ -17,8 +18,19 @@ const FormSignInSchema = z.object({
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
 
-  const onSignIn = (data: any): void => {
+  const onSignIn = async (data: any): Promise<void> => {
     console.log(data);
+
+    await axios.post(
+      "/auth/login",
+      { ...data },
+      {
+        baseURL: "https://bakery-nest-be-production.up.railway.app",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     // router.push("/");
   };
