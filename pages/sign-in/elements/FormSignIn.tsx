@@ -5,7 +5,10 @@ import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
+import { useMutation } from "react-query";
+import { loginApi } from "api/auth";
+import { AxiosError } from "axios";
+import { useState } from "react";
 
 const FormSignInSchema = z.object({
   email: z
@@ -15,25 +18,20 @@ const FormSignInSchema = z.object({
   password: z.string().min(1, { message: "Password không được bỏ trống" }),
 });
 
+type TypeFormSignIn = z.infer<typeof FormSignInSchema>;
+
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
-
-  const onSignIn = async (data: any): Promise<void> => {
-    console.log(data);
-
-    await axios.post(
-      "/auth/login",
-      { ...data },
-      {
-        baseURL: "https://bakery-nest-be-production.up.railway.app",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    // router.push("/");
-  };
+  const { mutate, error } = useMutation<
+    boolean,
+    AxiosError<{ message: string }>,
+    TypeFormSignIn,
+    any
+  >((data: TypeFormSignIn) => loginApi(data), {
+    onSuccess: () => {
+      router.push("/user");
+    },
+  });
 
   const { formState, register, handleSubmit } = useForm({
     reValidateMode: "onSubmit",
@@ -41,8 +39,17 @@ const FormSignIn = (): JSX.Element => {
     resolver: zodResolver(FormSignInSchema),
   });
 
+  const onSignIn = async (data: TypeFormSignIn) => {
+    await mutate(data);
+  };
+
   return (
     <form onSubmit={handleSubmit(onSignIn)}>
+      {error?.response?.data.message && (
+        <p className="text-center py-2 bg-red-200  text-red-600 rounded border border-red-300 font-bold">
+          {error?.response?.data.message}
+        </p>
+      )}
       <BaseInput
         label="Email"
         className="mb-3"
@@ -59,6 +66,7 @@ const FormSignIn = (): JSX.Element => {
       <BaseTypography className="text-right font-bold text-red-500">
         Quên mật khẩu?
       </BaseTypography>
+
       <BaseButton label="Đăng nhập" className="w-full" />
     </form>
   );
