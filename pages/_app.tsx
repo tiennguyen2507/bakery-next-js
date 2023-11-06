@@ -1,5 +1,4 @@
 import "styles/index.scss";
-import "antd/dist/antd.css";
 import React from "react";
 import type { AppProps } from "next/app";
 import LoadingRouter from "config/LoadingRouter";
