@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
 import { loginApi } from "api/auth";
-import { AxiosError } from "axios";
-import { useState } from "react";
+import { AxiosError, AxiosResponse } from "axios";
+import Cookies from "js-cookie";
 
 const FormSignInSchema = z.object({
   email: z
@@ -23,12 +23,13 @@ type TypeFormSignIn = z.infer<typeof FormSignInSchema>;
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
   const { mutate, error } = useMutation<
-    boolean,
+    AxiosResponse<{ access_token: string; refresh_token: string }>,
     AxiosError<{ message: string }>,
     TypeFormSignIn,
     any
   >((data: TypeFormSignIn) => loginApi(data), {
-    onSuccess: () => {
+    onSuccess: ({ data }) => {
+      Cookies.set("token", data.access_token, { expires: 7 });
       router.push("/user");
     },
   });

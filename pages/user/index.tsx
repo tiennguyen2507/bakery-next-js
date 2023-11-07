@@ -1,11 +1,14 @@
 import BaseButton from "components/atoms/BaseButton";
-import withLayoutUser from "layout/withLayoutUser";
+import Cookies from "js-cookie";
+import Layout from "layout/withLayoutUser";
+import withPermission from "middleware/withPermission";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 
 const User: FunctionComponent = () => {
   const router = useRouter();
   const onLogOut = (): void => {
+    Cookies.remove("token");
     router.push("/sign-in");
   };
   return (
@@ -16,4 +19,5 @@ const User: FunctionComponent = () => {
   );
 };
 
-export default withLayoutUser(User);
+const withLayoutUser = Layout(User);
+export default withPermission(withLayoutUser);
