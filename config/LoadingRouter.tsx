@@ -1,4 +1,5 @@
 import BaseLoading from "components/atoms/BaseLoading/BaseLoading";
+import withLayoutDefault from "layout/withLayoutDefault";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, ReactNode } from "react";
 
@@ -23,7 +24,14 @@ const LoadingRouter: FunctionComponent<TypeProps> = ({ children }) => {
 
   if (pageLoading) {
     return (
-      <BaseLoading classname="h-screen flex items-center justify-center" />
+      <div className="bg-blue-100 min-h-screen flex items-center justify-center">
+        <div
+          style={{ maxWidth: 500, width: "100%" }}
+          className="bg-white min-h-screen flex items-center justify-center"
+        >
+          <BaseLoading inline />
+        </div>
+      </div>
     );
   }
   return <>{children}</>;
