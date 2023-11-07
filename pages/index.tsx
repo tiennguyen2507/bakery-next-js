@@ -4,6 +4,7 @@ import Category from "components/home-component/Category";
 import Selling from "components/home-component/Selling";
 import { FunctionComponent } from "react";
 import withLayoutUser from "layout/withLayoutUser";
+import { GetServerSideProps } from "next";
 
 const App: FunctionComponent = () => {
   return (
@@ -13,6 +14,15 @@ const App: FunctionComponent = () => {
       <Selling />
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: "/user",
+    },
+    props: {},
+  };
 };
 
 export default withLayoutUser(App);
