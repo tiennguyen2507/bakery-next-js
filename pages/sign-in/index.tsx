@@ -16,7 +16,7 @@ const User = (): JSX.Element => {
     }
   }, [router]);
   return (
-    <div className="p-4 pt-10">
+    <div className="h-screen p-4 pt-10 flex flex-col justify-center">
       <TopSignIn />
       <FormSignIn />
       <BottomSignIn />

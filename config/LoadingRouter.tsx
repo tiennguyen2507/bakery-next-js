@@ -1,5 +1,4 @@
 import BaseLoading from "components/atoms/BaseLoading/BaseLoading";
-import withLayoutDefault from "layout/withLayoutDefault";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, ReactNode } from "react";
 

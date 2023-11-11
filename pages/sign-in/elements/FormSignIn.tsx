@@ -22,7 +22,7 @@ type TypeFormSignIn = z.infer<typeof FormSignInSchema>;
 
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
-  const { mutate, error } = useMutation<
+  const { mutate, error, isLoading } = useMutation<
     AxiosResponse<{ access_token: string; refresh_token: string }>,
     AxiosError<{ message: string }>,
     TypeFormSignIn,
@@ -47,28 +47,37 @@ const FormSignIn = (): JSX.Element => {
   return (
     <form onSubmit={handleSubmit(onSignIn)}>
       {error?.response?.data.message && (
-        <p className="text-center py-2 bg-red-200  text-red-600 rounded border border-red-300 font-bold">
-          {error?.response?.data.message}
-        </p>
+        <div className="text-center py-2 bg-red-200 rounded border border-red-300">
+          <BaseTypography weight={600} color="venetian-red">
+            {error?.response?.data.message}
+          </BaseTypography>
+        </div>
       )}
       <BaseInput
         label="Email"
         className="mb-3"
         error={formState.errors.email?.message}
+        disabled={isLoading}
         {...register("email")}
       />
       <BaseInput
         label="Mật khẩu"
         type="password"
         className="mb-3"
+        disabled={isLoading}
         error={formState.errors.password?.message}
         {...register("password")}
       />
-      <BaseTypography className="text-right font-bold text-red-500">
+      <BaseTypography align="end" weight={600} color="venetian-red">
         Quên mật khẩu?
       </BaseTypography>
 
-      <BaseButton label="Đăng nhập" className="w-full" />
+      <BaseButton
+        label="Đăng nhập"
+        className="w-full"
+        loading={isLoading}
+        disabled={!formState.isDirty}
+      />
     </form>
   );
 };

@@ -6,11 +6,15 @@ interface BaseInputProps {
   className?: string;
   value?: string;
   error?: string;
+  disabled?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 export default React.forwardRef<HTMLInputElement, BaseInputProps>(
-  function BaseInput({ label, type, className, error, ...props }, ref) {
+  function BaseInput(
+    { label, type, className, error, disabled, ...props },
+    ref
+  ) {
     return (
       <div className={className}>
         {label && (
@@ -23,6 +27,7 @@ export default React.forwardRef<HTMLInputElement, BaseInputProps>(
             ref={ref}
             className="bg-transparent outline-none w-full text-lg"
             type={type}
+            disabled={disabled}
             {...props}
           />
         </div>

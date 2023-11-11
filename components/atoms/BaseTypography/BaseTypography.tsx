@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, FunctionComponent, ReactNode } from "react";
 
 interface BaseTextProps {
   size?: string;
@@ -6,11 +6,34 @@ interface BaseTextProps {
   weight?: CSSProperties["fontWeight"];
   className?: string;
   children: ReactNode;
+  align?: CSSProperties["textAlign"];
 }
 
-export default function BaseTypography({
+const BaseTypography: FunctionComponent<BaseTextProps> = ({
   children,
+  weight,
+  size,
   className = "",
-}: BaseTextProps) {
-  return <p className={className}>{children}</p>;
-}
+  align,
+  color,
+}) => {
+  return (
+    <p
+      style={{
+        fontWeight: weight,
+        fontSize: size,
+        textAlign: align,
+        color: `color-${color}`,
+      }}
+      className={`color-${color} ${className}`}
+    >
+      {children}
+    </p>
+  );
+};
+
+BaseTypography.defaultProps = {
+  color: "woodsmoke",
+};
+
+export default BaseTypography;
