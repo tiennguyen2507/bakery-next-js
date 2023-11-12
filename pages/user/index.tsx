@@ -29,6 +29,11 @@ const User: FunctionComponent = ({ user }: any) => {
       onLogOut();
     }
   }, []);
+
+  if (!user) {
+    return null;
+  }
+
   return (
     <section className="p-4">
       <div className="flex flex-col items-center gap-2 px-20">
@@ -59,7 +64,7 @@ const User: FunctionComponent = ({ user }: any) => {
 };
 
 const InfoItem = ({ label, value, icon }: any) => (
-  <div className="">
+  <div className="p-2 bg-slate-100 rounded">
     <div className="flex gap-2 items-center mb-1">
       <BaseIcon name={icon} />
       <BaseTypography weight={500}>{label}</BaseTypography>
