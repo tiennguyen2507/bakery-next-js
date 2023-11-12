@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
 interface BaseButtonProps {
-  name: "menu" | "cart";
+  name: "menu" | "cart" | "email";
   className?: string;
   onClick?: () => void;
 }
