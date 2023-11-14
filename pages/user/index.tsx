@@ -35,31 +35,37 @@ const User: FunctionComponent = ({ user }: any) => {
   }
 
   return (
-    <section className="p-4">
-      <div className="flex flex-col items-center gap-2 px-20">
-        <div className="w-32 h-32 rounded-full bg-red-300" />
-        <BaseTypography size="20px" weight={600} color="woodsmoke">
-          {user?.firstName} {user?.lastName}
-        </BaseTypography>
+    <>
+      <div className="bg-blue-200 w-full ">
+        <div className="flex flex-col items-center gap-2 px-20 mb-20">
+          <div className="bg-white translate-y-1/2 p-2 rounded-full">
+            <div className="w-32 h-32 rounded-full bg-red-300 " />
+          </div>
+        </div>
       </div>
-      <div className="shadow border rounded p-2 flex flex-col gap-2 my-4">
-        {user?.id && <InfoItem label="ID" icon="user" value={user.id} />}
-        {user?.email && (
-          <InfoItem label="Email" icon="email" value={user.email} />
-        )}
-        {user?.created_at && (
-          <InfoItem label="Ngày tạo" icon="clock" value={user.created_at} />
-        )}
-        {user?.updated_at && (
-          <InfoItem
-            label="Ngày cập nhật mới nhất"
-            icon="history"
-            value={user.updated_at}
-          />
-        )}
+      <BaseTypography size="20px" weight={600} color="woodsmoke" align="center">
+        {user?.firstName} {user?.lastName}
+      </BaseTypography>
+      <div className=" p-4">
+        <div className="shadow border rounded p-2 flex flex-col gap-2 my-4">
+          {user?.id && <InfoItem label="ID" icon="user" value={user.id} />}
+          {user?.email && (
+            <InfoItem label="Email" icon="email" value={user.email} />
+          )}
+          {user?.created_at && (
+            <InfoItem label="Ngày tạo" icon="clock" value={user.created_at} />
+          )}
+          {user?.updated_at && (
+            <InfoItem
+              label="Ngày cập nhật mới nhất"
+              icon="history"
+              value={user.updated_at}
+            />
+          )}
+        </div>
+        <BaseButton label="Đăng xuất" className="w-full" onClick={onLogOut} />
       </div>
-      <BaseButton label="Đăng xuất" className="w-full" onClick={onLogOut} />
-    </section>
+    </>
   );
 };
 
