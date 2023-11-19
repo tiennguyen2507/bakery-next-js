@@ -1,52 +1,51 @@
-import Image from "next/image";
 import React, { FunctionComponent } from "react";
-import { listCard } from "mock/product";
 import { formatMoney } from "lib";
 import withLayoutUser from "layout/withLayoutUser";
+import { getOneCakeApi } from "api/cake";
+import { GetServerSideProps } from "next";
+import { Cake } from "types/cake.type";
+import BaseTypography from "components/atoms/BaseTypography/BaseTypography";
+import BaseButton from "components/atoms/BaseButton/BaseButton";
 
-type Props = {
-  user: any;
-};
+type Props = { cake: Cake };
 
-const Product: FunctionComponent<Props> = ({ user }) => {
+const Product: FunctionComponent<Props> = ({ cake }) => {
   return (
     <div className="p-4">
-      <Image
-        src={user.image}
+      <img
+        src={cake.image}
         alt="rewfre"
-        objectFit="contain"
-        className="w-full h-[500px] object-cover rounded-2xl"
+        className="object-cover rounded-2xl aspect-[4/3]"
       />
-      <h2 className="text-3xl my-2">{user.name}</h2>
-      <h4 className="m-0 text-2xl text-red-700 my-2">
-        {formatMoney(user.price)}
-      </h4>
-      <div className="mb-8">
-        <p className="text-gray-400 text-xl">Kích thước</p>
-        <div className="flex items-center gap-4">
-          <div className="w-20 h-20 bg-[#bbe0ca] rounded-full flex justify-center items-center">
+      <BaseTypography size="20px" weight={600} className="mt-3">
+        {cake.title}
+      </BaseTypography>
+      <BaseTypography weight={600} size="20px" color="venetian-red">
+        {formatMoney(cake.price)}
+      </BaseTypography>
+      <div>
+        <BaseTypography weight={600} size="16px">
+          Kích thước
+        </BaseTypography>
+        <div className="flex items-center gap-4 my-4">
+          <div className="w-16 h-16 bg-[#bbe0ca] rounded-full flex justify-center items-center">
             <p className="m-0 text-green-500 font-bold">X</p>
           </div>
-          <div className="w-20 h-20 bg-[#F1F9F4] rounded-full flex justify-center items-center">
+          <div className="w-16 h-16 bg-[#F1F9F4] rounded-full flex justify-center items-center">
             <p className="m-0 text-green-500 font-bold">M</p>
           </div>
-          <div className="w-20 h-20 bg-[#F1F9F4] rounded-full flex justify-center items-center">
+          <div className="w-16 h-16 bg-[#F1F9F4] rounded-full flex justify-center items-center">
             <p className="m-0 text-green-500 font-bold">L</p>
           </div>
-          <div className="w-20 h-20 bg-[#F1F9F4] rounded-full flex justify-center items-center">
+          <div className="w-16 h-16 bg-[#F1F9F4] rounded-full flex justify-center items-center">
             <p className="m-0 text-green-500 font-bold">XL</p>
           </div>
         </div>
       </div>
-      <div>
-        <h2>Mô tả:</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi iste
-          similique, minus, hic dolorum quidem corporis fugit, inventore
-          officiis labore mollitia cupiditate numquam iure impedit sunt expedita
-          totam consequatur facilis?
-        </p>
-      </div>
+      <BaseTypography weight={600} size="16px">
+        Mô tả:
+      </BaseTypography>
+      <BaseTypography>{cake.description}</BaseTypography>
       <div className="flex justify-between">
         <div className="flex items-center gap-5">
           <button className="px-6 py-2 bg-[#FE4A7A] text-white rounded-xl active:bg-pink-500">
@@ -57,19 +56,18 @@ const Product: FunctionComponent<Props> = ({ user }) => {
             -
           </button>
         </div>
-        <div>
-          <button className="w-56 h-16 bg-[#FE4A7A] text-white rounded-full active:bg-pink-500 text-2xl">
-            Thêm vào giỏ
-          </button>
-        </div>
+        <BaseButton label="Thêm vào giỏ hàng" />
       </div>
     </div>
   );
 };
 
-export const getServerSideProps = ({ params }: { params: any }) => {
-  const resuft = listCard.find((value) => value.id === params.id);
-  return { props: { user: resuft } };
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  req,
+}) => {
+  const cake = await getOneCakeApi(req.cookies["token"], params?.id);
+  return { props: { cake } };
 };
 
 export default withLayoutUser(Product);
