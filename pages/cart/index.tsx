@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React, { FunctionComponent } from "react";
 import { formatMoney } from "lib";
-import { listCard } from "mock/product";
 import withLayoutUser from "layout/withLayoutUser";
 
 const Cart: FunctionComponent = () => {
@@ -10,7 +9,7 @@ const Cart: FunctionComponent = () => {
       <h2 className="text-[#59519D] font-bold text-center py-4">
         Order của tôi
       </h2>
-      {listCard.map(({ image, price, name, size, taste, amount }, index) => {
+      {/* {listCard.map(({ image, price, name, size, taste, amount }, index) => {
         return (
           <div key={index}>
             <div
@@ -45,7 +44,7 @@ const Cart: FunctionComponent = () => {
             </div>
           </div>
         );
-      })}
+      })} */}
       <div
         className="bg-[#F6F8FA] my-6 rounded-xl relative 
       shadow-lg cursor-pointer active:bg-slate-100 p-4"
