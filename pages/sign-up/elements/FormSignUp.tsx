@@ -1,12 +1,10 @@
-import BaseButton from "components/atoms/BaseButton";
-import BaseInput from "components/atoms/BaseInput";
 import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
-import { registerApi } from "api/auth.api";
 import { errorMessage } from "constants/error-message";
+import { AuthApi } from "api";
 
 const FormSignUpSchema = z.object({
   email: z
@@ -23,7 +21,7 @@ type TypeFormSignUp = z.infer<typeof FormSignUpSchema>;
 const FormSignUp = (): JSX.Element => {
   const router = useRouter();
   const { mutate, isLoading } = useMutation({
-    mutationFn: (data: TypeFormSignUp) => registerApi(data),
+    mutationFn: (data: TypeFormSignUp) => AuthApi.register(data),
     onSuccess: () => {
       router.push("/sign-in");
     },

@@ -1,6 +1,3 @@
-import BaseButton from "components/atoms/BaseButton";
-import BaseInput from "components/atoms/BaseInput";
-import BaseTypography from "components/atoms/BaseTypography";
 import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";

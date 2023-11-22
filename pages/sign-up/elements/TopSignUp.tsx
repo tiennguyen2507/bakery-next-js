@@ -1,4 +1,3 @@
-import BaseTypography from "components/atoms/BaseTypography";
 import slide01 from "assets/cakeVector.png";
 import Image from "next/image";
 

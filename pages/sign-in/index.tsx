@@ -2,7 +2,6 @@ import withLayoutDefault from "layout/withLayoutDefault";
 import TopSignIn from "./elements/TopSignIn";
 import FormSignIn from "./elements/FormSignIn";
 import BottomSignIn from "./elements/BottomSignIn";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import { GetServerSideProps } from "next";

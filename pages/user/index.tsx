@@ -1,13 +1,10 @@
-import BaseButton from "components/atoms/BaseButton";
 import Cookies from "js-cookie";
 import withLayoutUser from "layout/withLayoutUser";
 import { useRouter } from "next/router";
-import { FunctionComponent, useEffect } from "react";
 import { GetServerSideProps } from "next";
-import BaseTypography from "components/atoms/BaseTypography";
-import BaseIcon, { BaseIconProps } from "components/atoms/BaseIcon";
 import { AuthApi } from "api";
 import { PageConfig } from "config/configPage";
+import { BaseIconProps } from "components/atoms/BaseIcon";
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   try {
@@ -18,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   }
 };
 
-const User: FunctionComponent = ({ user }: any) => {
+const User: React.FC = ({ user }: any) => {
   const router = useRouter();
   const onLogOut = (): void => {
     Cookies.remove("token");

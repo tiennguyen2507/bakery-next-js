@@ -1,7 +1,5 @@
 import Image from "next/image";
 import slide01 from "assets/slide01.jpg";
-import Category from "components/home-component/Category";
-import Selling from "components/home-component/Selling";
 import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps, NextPage } from "next";
 import { ListCake } from "types/cake.type";
