@@ -1,16 +1,10 @@
-import { FunctionComponent } from "react";
-
-interface BaseButtonProps {
-  name: "menu" | "cart" | "email";
+export type BaseIconProps = {
+  name: "menu" | "cart" | "email" | "history" | "clock" | "user";
   className?: string;
   onClick?: () => void;
-}
+};
 
-const BaseIcon: FunctionComponent<BaseButtonProps> = ({
-  name,
-  className,
-  onClick,
-}) => {
+const BaseIcon: React.FC<BaseIconProps> = ({ name, className, onClick }) => {
   return <span className={`icon-${name} ${className}`} onClick={onClick} />;
 };
 

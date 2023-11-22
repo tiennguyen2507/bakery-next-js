@@ -1,4 +1,4 @@
-import BaseButton from "components/atoms/BaseButton/BaseButton";
+import BaseButton from "components/atoms/BaseButton";
 import BaseInput from "components/atoms/BaseInput";
 import BaseTypography from "components/atoms/BaseTypography";
 import { useRouter } from "next/router";
@@ -6,9 +6,10 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
-import { loginApi } from "api/auth";
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosError } from "axios";
 import Cookies from "js-cookie";
+import { AuthApi } from "api";
+import type { LoginRequest } from "types/auth.type";
 
 const FormSignInSchema = z.object({
   email: z
@@ -22,12 +23,8 @@ type TypeFormSignIn = z.infer<typeof FormSignInSchema>;
 
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
-  const { mutate, error, isLoading } = useMutation<
-    AxiosResponse<{ access_token: string; refresh_token: string }>,
-    AxiosError<{ message: string }>,
-    TypeFormSignIn,
-    any
-  >((data: TypeFormSignIn) => loginApi(data), {
+  const { mutate, error, isLoading } = useMutation({
+    mutationFn: (data: LoginRequest) => AuthApi.login(data),
     onSuccess: ({ data }) => {
       Cookies.set("token", data.access_token, { expires: 7 });
       router.push("/user");
@@ -46,10 +43,10 @@ const FormSignIn = (): JSX.Element => {
 
   return (
     <form onSubmit={handleSubmit(onSignIn)}>
-      {error?.response?.data.message && (
+      {(error as AxiosError<{ message: string }>)?.response?.data.message && (
         <div className="text-center py-2 bg-red-200 rounded border border-red-300">
           <BaseTypography weight={600} color="venetian-red">
-            {error?.response?.data.message}
+            {(error as AxiosError<{ message: string }>)?.response?.data.message}
           </BaseTypography>
         </div>
       )}
@@ -71,7 +68,6 @@ const FormSignIn = (): JSX.Element => {
       <BaseTypography align="end" weight={600} color="venetian-red">
         Quên mật khẩu?
       </BaseTypography>
-
       <BaseButton
         label="Đăng nhập"
         className="w-full"

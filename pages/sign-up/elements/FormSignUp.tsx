@@ -5,7 +5,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
-import { registerApi } from "api/auth";
+import { registerApi } from "api/auth.api";
 import { errorMessage } from "constants/error-message";
 
 const FormSignUpSchema = z.object({

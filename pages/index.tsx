@@ -5,7 +5,7 @@ import Selling from "components/home-component/Selling";
 import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps, NextPage } from "next";
 import { ListCake } from "types/cake.type";
-import { getAllCakesApi } from "api/cake";
+import { getAllCakesApi } from "api/cake.api";
 import { PageConfig } from "config/configPage";
 
 type homePageProps = {

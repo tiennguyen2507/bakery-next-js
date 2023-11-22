@@ -1,17 +1,17 @@
 import BaseButton from "components/atoms/BaseButton";
 import Cookies from "js-cookie";
-import Layout from "layout/withLayoutUser";
-import withPermission from "middleware/withPermission";
+import withLayoutUser from "layout/withLayoutUser";
 import { useRouter } from "next/router";
 import { FunctionComponent, useEffect } from "react";
 import { GetServerSideProps } from "next";
-import { getAuthInfo } from "api/auth";
-import BaseTypography from "components/atoms/BaseTypography/BaseTypography";
-import BaseIcon from "components/atoms/BaseIcon";
+import BaseTypography from "components/atoms/BaseTypography";
+import BaseIcon, { BaseIconProps } from "components/atoms/BaseIcon";
+import { AuthApi } from "api";
+import { PageConfig } from "config/configPage";
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   try {
-    const userInfo = await getAuthInfo(req.cookies["token"]);
+    const userInfo = await AuthApi.getInfo(req.cookies["token"]);
     return { props: { user: userInfo.data } };
   } catch (error) {
     return { props: {} };
@@ -69,7 +69,13 @@ const User: FunctionComponent = ({ user }: any) => {
   );
 };
 
-const InfoItem = ({ label, value, icon }: any) => (
+type InfoItemProps = {
+  label: string;
+  value: string;
+  icon: BaseIconProps["name"];
+};
+
+const InfoItem = ({ label, value, icon }: InfoItemProps): JSX.Element => (
   <div className="p-2 bg-slate-100 rounded">
     <div className="flex gap-2 items-center mb-1">
       <BaseIcon name={icon} />
@@ -79,5 +85,7 @@ const InfoItem = ({ label, value, icon }: any) => (
   </div>
 );
 
-const withLayoutUser = Layout(User);
-export default withPermission(withLayoutUser);
+export default PageConfig({
+  page: User,
+  layout: withLayoutUser,
+});
