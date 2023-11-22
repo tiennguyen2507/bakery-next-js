@@ -2,8 +2,10 @@ import withLayoutDefault from "layout/withLayoutDefault";
 import TopSignUp from "./elements/TopSignUp";
 import FormSignUp from "./elements/FormSignUp";
 import BottomSignUp from "./elements/BottomSignUp";
+import { PageConfig } from "config/configPage";
+import { FunctionComponent } from "react";
 
-const User = (): JSX.Element => {
+const User: FunctionComponent = () => {
   return (
     <div className="p-4 pt-10">
       <TopSignUp />
@@ -13,4 +15,7 @@ const User = (): JSX.Element => {
   );
 };
 
-export default withLayoutDefault(User);
+export default PageConfig({
+  page: User,
+  layout: withLayoutDefault,
+});

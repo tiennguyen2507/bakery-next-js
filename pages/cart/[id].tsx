@@ -1,15 +1,16 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { formatMoney } from "lib";
 import withLayoutUser from "layout/withLayoutUser";
 import { getOneCakeApi } from "api/cake";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { Cake } from "types/cake.type";
 import BaseTypography from "components/atoms/BaseTypography/BaseTypography";
 import BaseButton from "components/atoms/BaseButton/BaseButton";
+import { PageConfig } from "config/configPage";
 
 type Props = { cake: Cake };
 
-const Product: FunctionComponent<Props> = ({ cake }) => {
+const Product: NextPage<Props> = ({ cake }) => {
   return (
     <div className="p-4">
       <img
@@ -70,4 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   return { props: { cake } };
 };
 
-export default withLayoutUser(Product);
+export default PageConfig({
+  page: Product,
+  layout: withLayoutUser,
+});

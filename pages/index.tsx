@@ -6,6 +6,7 @@ import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps, NextPage } from "next";
 import { ListCake } from "types/cake.type";
 import { getAllCakesApi } from "api/cake";
+import { PageConfig } from "config/configPage";
 
 type homePageProps = {
   listCake: ListCake;
@@ -16,7 +17,7 @@ const App: NextPage<homePageProps> = ({ listCake }) => {
     <div className="container mx-auto p-4 rounded-2xl">
       <Image src={slide01} alt="image" className="object-cover h-96" />
       <Category />
-      <Selling data={listCake} />
+      {listCake && <Selling data={listCake} />}
     </div>
   );
 };
@@ -28,4 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   };
 };
 
-export default withLayoutUser(App);
+export default PageConfig({
+  page: App,
+  layout: withLayoutUser,
+});
