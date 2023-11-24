@@ -7,7 +7,7 @@ interface BaseButtonProps {
   loading?: boolean;
   disabled?: boolean;
   onClick?: () => void;
-  type: "button" | "submit" | "reset";
+  type?: "button" | "submit" | "reset";
 }
 
 const BaseButton: FunctionComponent<BaseButtonProps> = ({
