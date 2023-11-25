@@ -66,6 +66,7 @@ const FormSignIn = (): JSX.Element => {
         Quên mật khẩu?
       </BaseTypography>
       <BaseButton
+        type="submit"
         label="Đăng nhập"
         className="w-full"
         loading={isLoading}

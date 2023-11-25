@@ -1,5 +1,4 @@
 import { ComponentType } from "react";
-import Header from "../components/Header";
 
 const withLayoutUser = <P extends object>(
   WrappedComponent: ComponentType<P>

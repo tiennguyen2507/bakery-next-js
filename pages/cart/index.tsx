@@ -2,25 +2,36 @@ import Image from "next/image";
 import React, { FunctionComponent } from "react";
 import { formatMoney } from "lib";
 import withLayoutUser from "layout/withLayoutUser";
+import { GetServerSideProps } from "next";
+import { CartApi } from "api/cart.api";
 
-const Cart: FunctionComponent = () => {
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const cart = await CartApi.getAll(req.cookies["token"]).then(
+    (res) => res.data
+  );
+
+  return { props: { cart } };
+};
+
+const Cart: FunctionComponent<{ cart: any[] }> = ({ cart }) => {
+  console.log(cart);
   return (
     <div className="p-4">
       <h2 className="text-[#59519D] font-bold text-center py-4">
         Order của tôi
       </h2>
-      {/* {listCard.map(({ image, price, name, size, taste, amount }, index) => {
+      {cart?.map(({ image, price, name, size, taste, amount }, index) => {
         return (
           <div key={index}>
             <div
               className="bg-[#F6F8FA] mb-4 rounded-xl flex items-start gap-4 p-2 relative shadow-lg cursor-pointer active:bg-slate-100"
               key={index}
             >
-              <Image
+              <img
                 src={image}
                 alt="img"
                 className="w-28 h-28 rounded-xl object-cover"
-              ></Image>
+              ></img>
               <div className="flex-grow">
                 <div className="flex justify-between">
                   <h3 className="m-0 text-xl">{name}</h3>
@@ -44,7 +55,7 @@ const Cart: FunctionComponent = () => {
             </div>
           </div>
         );
-      })} */}
+      })}
       <div
         className="bg-[#F6F8FA] my-6 rounded-xl relative 
       shadow-lg cursor-pointer active:bg-slate-100 p-4"

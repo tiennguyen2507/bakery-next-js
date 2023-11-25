@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import axios from "axios";
 
 const baseURL = "https://bakery-nest-be-production.up.railway.app";
@@ -9,6 +10,10 @@ const httpRequest = axios.create({
 });
 
 httpRequest.interceptors.request.use((requestConfig) => {
+  const token = Cookies.get("token");
+  if (token) {
+    requestConfig.headers.Authorization = `Bearer ${token}`;
+  }
   return requestConfig;
 });
 

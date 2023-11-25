@@ -8,16 +8,38 @@ import BaseTypography from "components/atoms/BaseTypography/BaseTypography";
 import BaseButton from "components/atoms/BaseButton/BaseButton";
 import { PageConfig } from "config/configPage";
 import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { CartApi } from "api/cart.api";
+import { useRouter } from "next/router";
 
 type Props = { cake: Cake };
 
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  req,
+}) => {
+  const cake = await getOneCakeApi(req.cookies["token"], params?.id);
+  return { props: { cake } };
+};
+
 const Product: NextPage<Props> = ({ cake }) => {
+  const router = useRouter();
+
+  const { mutate } = useMutation({
+    mutationFn: (data: Cart.AddProductInCardRequest) =>
+      CartApi.addProductInCard(data),
+    onSuccess: () => router.push("/cart"),
+  });
+
   const { control, handleSubmit } = useForm({
     defaultValues: { size: "S", amount: 1 },
   });
 
   const onSubmit = (data: any): void => {
-    console.log(data);
+    mutate({
+      amount: data.amount,
+      productID: (router.query.id as string) || "",
+    });
   };
 
   return (
@@ -51,14 +73,6 @@ const Product: NextPage<Props> = ({ cake }) => {
       </div>
     </form>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async ({
-  params,
-  req,
-}) => {
-  const cake = await getOneCakeApi(req.cookies["token"], params?.id);
-  return { props: { cake } };
 };
 
 export default PageConfig({

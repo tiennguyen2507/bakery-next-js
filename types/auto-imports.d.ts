@@ -11,6 +11,7 @@ declare global {
   const BaseLoading: typeof import('../components/atoms/BaseLoading/index')['default']
   const BaseTypography: typeof import('../components/atoms/BaseTypography/index')['default']
   const CountNumber: typeof import('../components/molecules/CountNumber/index')['default']
+  const Header: typeof import('../components/organisms/Header/index')['default']
   const PickSize: typeof import('../components/molecules/PickSize/index')['default']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']

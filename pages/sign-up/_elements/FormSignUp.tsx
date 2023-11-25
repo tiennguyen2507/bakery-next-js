@@ -68,6 +68,7 @@ const FormSignUp = (): JSX.Element => {
         {...register("password")}
       />
       <BaseButton
+        type="submit"
         label="Đăng ký"
         className="w-full mt-10"
         loading={isLoading}
