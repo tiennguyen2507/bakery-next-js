@@ -14,7 +14,7 @@ const nextConfig = {
       AutoImport({
         imports: ["react"],
         dts: resolve(__dirname, "types/auto-imports.d.ts"),
-        dirs: ["components/**"],
+        dirs: ["components/**/index.ts"],
         eslintrc: { enabled: true },
       })
     );

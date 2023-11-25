@@ -5,11 +5,8 @@
     "BaseInput": true,
     "BaseLoading": true,
     "BaseTypography": true,
-    "Category": true,
-    "GIcon": true,
-    "Header": true,
-    "Selling": true,
-    "SideBar": true,
+    "CountNumber": true,
+    "PickSize": true,
     "createRef": true,
     "forwardRef": true,
     "lazy": true,
@@ -29,8 +26,6 @@
     "useRef": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true,
-    "PickSize": true,
-    "CountNumber": true
+    "useTransition": true
   }
 }

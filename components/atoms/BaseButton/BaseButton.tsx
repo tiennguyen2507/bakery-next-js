@@ -1,21 +1,13 @@
 import { FunctionComponent } from "react";
 import BaseLoading from "../BaseLoading";
-
-interface BaseButtonProps {
-  label: string;
-  className?: string;
-  loading?: boolean;
-  disabled?: boolean;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-}
+import { BaseButtonProps } from "./index";
 
 const BaseButton: FunctionComponent<BaseButtonProps> = ({
-  label,
-  className,
-  loading,
-  disabled,
-  onClick,
+  label = "",
+  className = "",
+  loading = false,
+  disabled = false,
+  onClick = () => null,
   type = "button",
 }) => {
   return (
@@ -31,14 +23,6 @@ const BaseButton: FunctionComponent<BaseButtonProps> = ({
       {label}
     </button>
   );
-};
-
-BaseButton.defaultProps = {
-  label: "",
-  className: "",
-  onClick: () => null,
-  loading: false,
-  disabled: false,
 };
 
 export default BaseButton;

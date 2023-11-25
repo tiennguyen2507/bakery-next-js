@@ -1,7 +1,7 @@
 import withLayoutDefault from "layout/withLayoutDefault";
-import TopSignUp from "./elements/TopSignUp";
-import FormSignUp from "./elements/FormSignUp";
-import BottomSignUp from "./elements/BottomSignUp";
+import TopSignUp from "./_elements/TopSignUp";
+import FormSignUp from "./_elements/FormSignUp";
+import BottomSignUp from "./_elements/BottomSignUp";
 import { PageConfig } from "config/configPage";
 import { FunctionComponent } from "react";
 

@@ -1,8 +1,5 @@
-import BaseButton from "components/atoms/BaseButton/BaseButton";
-import BaseTypography from "components/atoms/BaseTypography/BaseTypography";
 import { formatMoney } from "lib";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import { ListCake } from "types/cake.type";
 
@@ -11,14 +8,11 @@ type Props = {
 };
 
 const Selling: FunctionComponent<Props> = ({ data }) => {
-  const router = useRouter();
-  console.log(data);
-
   return (
     <div className="my-4 ">
       <h2 className="text-[#59519D]">Bán chạy</h2>
       <div className="rounded-xl">
-        {data.map(({ title, description, image, price, id, size }: any) => {
+        {data?.map(({ title, description, image, price, id, size }: any) => {
           return (
             <Link href={`cart/${id}`} key={id}>
               <div
