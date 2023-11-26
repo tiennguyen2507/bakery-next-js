@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { FunctionComponent } from "react";
 import { formatMoney } from "lib";
 import withLayoutUser from "layout/withLayoutUser";

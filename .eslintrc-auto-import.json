@@ -6,6 +6,7 @@
     "BaseLoading": true,
     "BaseTypography": true,
     "CountNumber": true,
+    "Header": true,
     "PickSize": true,
     "createRef": true,
     "forwardRef": true,
@@ -24,10 +25,9 @@
     "useMemo": true,
     "useReducer": true,
     "useRef": true,
+    "useRouter": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true,
-    "Header": true,
-    "useRouter": true
+    "useTransition": true
   }
 }
