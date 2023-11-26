@@ -9,7 +9,6 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  pageExtensions: ["_element"],
   webpack: (config) => {
     config.plugins.push(
       AutoImport({
