@@ -6,6 +6,7 @@ import FormSignIn from "./_components/FormSignIn";
 import BottomSignIn from "./_components/BottomSignIn";
 const User = (): JSX.Element => {
   const router = useRouter();
+  const [isShowModal, SetIsShowModal] = useState(false);
   useEffect(() => {
     const tokenCookie = Cookies.get("token");
     if (tokenCookie) {
@@ -17,6 +18,18 @@ const User = (): JSX.Element => {
       <TopSignIn />
       <FormSignIn />
       <BottomSignIn />
+      {isShowModal && (
+        <BaseModal
+          isOpen={isShowModal}
+          onClose={() => SetIsShowModal(false)}
+          title="Thông báo"
+        >
+          hello
+        </BaseModal>
+      )}
+      <button type="button" onClick={() => SetIsShowModal(!isShowModal)}>
+        text
+      </button>
     </div>
   );
 };

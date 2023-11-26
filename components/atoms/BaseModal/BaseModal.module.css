@@ -1,0 +1,49 @@
+.wrapper {
+  padding: 20px;
+  position: absolute;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  animation: show 0.25s ease forwards;
+  background-color: var(--color-white);
+  padding: 24px;
+  border-radius: 5px;
+  transform: scale(0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeScale {
+  animation: close 0.25s ease forwards;
+}
+
+@keyframes show {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+}

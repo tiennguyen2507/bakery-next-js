@@ -9,6 +9,7 @@ declare global {
   const BaseIcon: typeof import('../components/atoms/BaseIcon/index')['default']
   const BaseInput: typeof import('../components/atoms/BaseInput/index')['default']
   const BaseLoading: typeof import('../components/atoms/BaseLoading/index')['default']
+  const BaseModal: typeof import('../components/atoms/BaseModal/index')['default']
   const BaseTypography: typeof import('../components/atoms/BaseTypography/index')['default']
   const CountNumber: typeof import('../components/molecules/CountNumber/index')['default']
   const Header: typeof import('../components/organisms/Header/index')['default']
@@ -34,4 +35,10 @@ declare global {
   const useState: typeof import('react')['useState']
   const useSyncExternalStore: typeof import('react')['useSyncExternalStore']
   const useTransition: typeof import('react')['useTransition']
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { FunctionComponent } from 'react'
+  import('react')
 }

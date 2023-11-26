@@ -28,6 +28,8 @@
     "useRouter": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true
+    "useTransition": true,
+    "FunctionComponent": true,
+    "BaseModal": true
   }
 }
