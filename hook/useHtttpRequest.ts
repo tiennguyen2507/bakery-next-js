@@ -28,9 +28,7 @@ export const useHttpRequest = () => {
   return instant;
 };
 
-export const useHttpRequestGssp = async (
-  context?: GetServerSidePropsContext
-) => {
+export const useHttpRequestGssp = (context?: GetServerSidePropsContext) => {
   const token = context?.req.cookies["token"];
   return axios.create({
     baseURL,

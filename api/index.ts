@@ -1,1 +1,1 @@
-export { AuthApi } from "api/auth.api";
+export { useAuthApi, userAuthGsspApi } from "api/auth.api";
