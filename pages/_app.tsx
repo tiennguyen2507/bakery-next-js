@@ -1,16 +1,18 @@
 import "styles/index.scss";
-import React from "react";
 import type { AppProps } from "next/app";
 import LoadingRouter from "config/LoadingRouter";
 import { QueryClient, QueryClientProvider } from "react-query";
+import GlobalStateProvider from "provider/globalState";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient());
+  const [queryClient] = useState(() => new QueryClient());
   return (
-    <QueryClientProvider client={queryClient}>
-      <LoadingRouter>
-        <Component {...pageProps} />
-      </LoadingRouter>
-    </QueryClientProvider>
+    <GlobalStateProvider>
+      <QueryClientProvider client={queryClient}>
+        <LoadingRouter>
+          <Component {...pageProps} />
+        </LoadingRouter>
+      </QueryClientProvider>
+    </GlobalStateProvider>
   );
 }

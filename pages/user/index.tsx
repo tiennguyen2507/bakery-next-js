@@ -1,14 +1,14 @@
 import Cookies from "js-cookie";
 import withLayoutUser from "layout/withLayoutUser";
-import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
-import { AuthApi } from "api";
 import { PageConfig } from "config/configPage";
 import { BaseIconProps } from "components/atoms/BaseIcon";
+import { userAuthGsspApi } from "api/auth.api";
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { authGetInfo } = userAuthGsspApi(context);
   try {
-    const userInfo = await AuthApi.getInfo(req.cookies["token"]);
+    const userInfo = await authGetInfo();
     return { props: { user: userInfo.data } };
   } catch (error) {
     return { props: {} };

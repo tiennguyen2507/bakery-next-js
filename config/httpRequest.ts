@@ -17,9 +17,15 @@ httpRequest.interceptors.request.use((requestConfig) => {
   return requestConfig;
 });
 
-httpRequest.interceptors.response.use((responseConfig) => {
-  return responseConfig;
-});
+httpRequest.interceptors.response.use(
+  (responseConfig) => {
+    return responseConfig;
+  },
+  (err) => {
+    window.location.href = "/sign-in";
+    return err;
+  }
+);
 
 export const httpRequestGssp = ({ token }: { token?: string }) => {
   return axios.create({

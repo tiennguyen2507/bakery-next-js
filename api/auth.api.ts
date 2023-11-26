@@ -1,5 +1,6 @@
+import { useHttpRequest, useHttpRequestGssp } from "hook/useHtttpRequest";
 import { AxiosPromise } from "axios";
-import httpRequest, { httpRequestGssp } from "config/httpRequest";
+import { GetServerSidePropsContext } from "next";
 import {
   LoginRequest,
   LoginResponse,
@@ -7,12 +8,21 @@ import {
   RegisterResponse,
 } from "types/auth.type";
 
-export const AuthApi = {
-  login: (data: LoginRequest): AxiosPromise<LoginResponse> =>
-    httpRequest.post("auth/login", data),
+export const useAuthApi = () => {
+  const httpRequest = useHttpRequest();
+  return {
+    authLogin: (data: LoginRequest): AxiosPromise<LoginResponse> =>
+      httpRequest.post("auth/login", data),
 
-  register: (data: RegisterRequest): AxiosPromise<RegisterResponse> =>
-    httpRequest.post("auth/register", data),
+    authRegister: (data: RegisterRequest): AxiosPromise<RegisterResponse> => {
+      return httpRequest.post("auth/register", data);
+    },
+  };
+};
 
-  getInfo: (token?: string) => httpRequestGssp({ token }).get("/auth/info"),
+export const userAuthGsspApi = (context?: GetServerSidePropsContext) => {
+  const httpRequestGssp = useHttpRequestGssp(context);
+  return {
+    authGetInfo: () => httpRequestGssp.get("/auth/info"),
+  };
 };

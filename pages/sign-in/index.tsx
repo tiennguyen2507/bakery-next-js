@@ -1,11 +1,7 @@
 import withLayoutDefault from "layout/withLayoutDefault";
-import TopSignIn from "./_elements/TopSignIn";
-import FormSignIn from "./_elements/FormSignIn";
-import BottomSignIn from "./_elements/BottomSignIn";
-import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import { GetServerSideProps } from "next";
-
+import { TopSignIn, BottomSignIn, FormSignIn } from "./_elements";
 const User = (): JSX.Element => {
   const router = useRouter();
   useEffect(() => {

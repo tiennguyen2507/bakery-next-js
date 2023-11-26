@@ -4,6 +4,7 @@ import { formatMoney } from "lib";
 import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps } from "next";
 import { CartApi } from "api/cart.api";
+import { PageConfig } from "config/configPage";
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const cart = await CartApi.getAll(req.cookies["token"]).then(
@@ -14,7 +15,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 };
 
 const Cart: FunctionComponent<{ cart: any[] }> = ({ cart }) => {
-  console.log(cart);
   return (
     <div className="p-4">
       <h2 className="text-[#59519D] font-bold text-center py-4">
@@ -92,4 +92,7 @@ const Cart: FunctionComponent<{ cart: any[] }> = ({ cart }) => {
   );
 };
 
-export default withLayoutUser(Cart);
+export default PageConfig({
+  page: Cart,
+  layout: withLayoutUser,
+});

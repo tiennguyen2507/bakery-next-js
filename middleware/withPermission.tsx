@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { ComponentType, useEffect } from "react";
 import Cookies from "js-cookie";
 

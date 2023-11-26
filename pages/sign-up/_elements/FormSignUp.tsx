@@ -1,10 +1,9 @@
-import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
 import { errorMessage } from "constants/error-message";
-import { AuthApi } from "api";
+import { useAuthApi } from "api/auth.api";
 
 const FormSignUpSchema = z.object({
   email: z
@@ -20,8 +19,9 @@ type TypeFormSignUp = z.infer<typeof FormSignUpSchema>;
 
 const FormSignUp = (): JSX.Element => {
   const router = useRouter();
+  const { authRegister } = useAuthApi();
   const { mutate, isLoading } = useMutation({
-    mutationFn: (data: TypeFormSignUp) => AuthApi.register(data),
+    mutationFn: (data: TypeFormSignUp) => authRegister(data),
     onSuccess: () => {
       router.push("/sign-in");
     },

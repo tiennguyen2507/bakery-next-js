@@ -27,6 +27,7 @@
     "useState": true,
     "useSyncExternalStore": true,
     "useTransition": true,
-    "Header": true
+    "Header": true,
+    "useRouter": true
   }
 }

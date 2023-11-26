@@ -12,7 +12,7 @@ const nextConfig = {
   webpack: (config) => {
     config.plugins.push(
       AutoImport({
-        imports: ["react"],
+        imports: ["react", { from: "next/router", imports: ["useRouter"] }],
         dts: resolve(__dirname, "types/auto-imports.d.ts"),
         dirs: ["components/**/index.ts"],
         eslintrc: { enabled: true },

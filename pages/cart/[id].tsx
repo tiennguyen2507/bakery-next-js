@@ -10,7 +10,6 @@ import { PageConfig } from "config/configPage";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { CartApi } from "api/cart.api";
-import { useRouter } from "next/router";
 
 type Props = { cake: Cake };
 

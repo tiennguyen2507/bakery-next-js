@@ -1,12 +1,11 @@
-import { useRouter } from "next/router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
 import { AxiosError } from "axios";
 import Cookies from "js-cookie";
-import { AuthApi } from "api";
 import type { LoginRequest } from "types/auth.type";
+import { useAuthApi } from "api/auth.api";
 
 const FormSignInSchema = z.object({
   email: z
@@ -20,8 +19,10 @@ type TypeFormSignIn = z.infer<typeof FormSignInSchema>;
 
 const FormSignIn = (): JSX.Element => {
   const router = useRouter();
+  const { authLogin } = useAuthApi();
+
   const { mutate, error, isLoading } = useMutation({
-    mutationFn: (data: LoginRequest) => AuthApi.login(data),
+    mutationFn: (data: LoginRequest) => authLogin(data),
     onSuccess: ({ data }) => {
       Cookies.set("token", data.access_token, { expires: 7 });
       router.push("/user");
