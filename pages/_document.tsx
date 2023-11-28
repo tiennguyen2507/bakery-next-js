@@ -8,16 +8,24 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
+        <head>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+        </head>
+        <Head>
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
         </Head>
         <body>
+          <head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+          </head>
           <Main />
           <NextScript />
-          <div id="modal-root" />
         </body>
       </Html>
     );
