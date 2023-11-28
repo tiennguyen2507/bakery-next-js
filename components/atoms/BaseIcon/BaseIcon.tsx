@@ -8,11 +8,13 @@ export type BaseIconProps = {
     | "history"
     | "clock"
     | "user"
-    | "cancel-circle";
+    | "cancel-circle"
+    | "warning";
   className?: string;
   size?: string;
   onClick?: MouseEventHandler | undefined;
   cursorPointer?: boolean;
+  color?: string;
 };
 
 const BaseIcon: React.FC<BaseIconProps> = ({
@@ -21,10 +23,11 @@ const BaseIcon: React.FC<BaseIconProps> = ({
   onClick,
   size,
   cursorPointer,
+  color = "black",
 }) => {
   return (
     <span
-      className={`icon-${name} ${className}`}
+      className={`icon-${name} ${className} color-${color}`}
       onClick={onClick}
       style={{ fontSize: size, cursor: cursorPointer ? "pointer" : "initial" }}
     />

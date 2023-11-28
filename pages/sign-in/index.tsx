@@ -4,6 +4,7 @@ import { GetServerSideProps } from "next";
 import TopSignIn from "./_components/TopSignIn";
 import FormSignIn from "./_components/FormSignIn";
 import BottomSignIn from "./_components/BottomSignIn";
+import Notification from "components/molecules/Notification";
 const User = (): JSX.Element => {
   const router = useRouter();
   const [isShowModal, SetIsShowModal] = useState(false);
@@ -18,18 +19,10 @@ const User = (): JSX.Element => {
       <TopSignIn />
       <FormSignIn />
       <BottomSignIn />
-      {isShowModal && (
-        <BaseModal
-          isOpen={isShowModal}
-          onClose={() => SetIsShowModal(false)}
-          title="Thông báo"
-        >
-          hello
-        </BaseModal>
-      )}
       <button type="button" onClick={() => SetIsShowModal(!isShowModal)}>
         text
       </button>
+      {isShowModal && <Notification isOpen={true} title="" />}
     </div>
   );
 };

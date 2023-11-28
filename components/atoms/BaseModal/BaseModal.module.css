@@ -7,12 +7,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--box-shadow-main);
 }
 
 .container {
   animation: show 0.25s ease forwards;
   background-color: var(--color-white);
-  padding: 24px;
+  padding: 16px;
   border-radius: 5px;
   transform: scale(0.5);
 }
@@ -45,5 +46,38 @@
   to {
     transform: scale(0.25);
     opacity: 0;
+  }
+}
+
+@media (width <= 580px) {
+  .wrapper {
+    padding: 0px;
+    align-items: end;
+  }
+
+  .container {
+    width: 100% !important;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  @keyframes show {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes close {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(10px);
+      opacity: 0;
+    }
   }
 }
