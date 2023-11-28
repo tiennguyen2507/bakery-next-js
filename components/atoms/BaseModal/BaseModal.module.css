@@ -49,7 +49,7 @@
   }
 }
 
-@media screen and (width <= 580px) {
+@media (width <= 580px) {
   .wrapper {
     padding: 0px;
     align-items: end;
