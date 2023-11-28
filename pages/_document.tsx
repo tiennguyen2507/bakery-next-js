@@ -9,21 +9,12 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
         <Head>
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>
-          <head>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-          </head>
           <Main />
           <NextScript />
         </body>
