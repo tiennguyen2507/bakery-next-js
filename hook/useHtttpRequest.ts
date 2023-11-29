@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Cookies from "js-cookie";
 import { GetServerSidePropsContext } from "next";
 
@@ -22,7 +22,8 @@ export const useHttpRequest = () => {
     (responseConfig) => {
       return responseConfig;
     },
-    (error) => error
+    (error: AxiosError) =>
+      Promise.reject<{ message: string }>(error.response?.data)
   );
 
   return instant;

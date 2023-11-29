@@ -41,10 +41,10 @@ const FormSignIn = (): JSX.Element => {
 
   return (
     <form onSubmit={handleSubmit(onSignIn)}>
-      {(error as AxiosError<{ message: string }>)?.response?.data.message && (
+      {(error as { message: string })?.message && (
         <div className="text-center py-2 bg-red-200 rounded border border-red-300">
           <BaseTypography weight={600} color="venetian-red">
-            {(error as AxiosError<{ message: string }>)?.response?.data.message}
+            {(error as { message: string })?.message}
           </BaseTypography>
         </div>
       )}
