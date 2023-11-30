@@ -1,0 +1,27 @@
+.wrapper {
+  width: 100%;
+}
+.container {
+  border-radius: 2px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-grey-blue-97);
+  padding: 10px;
+}
+.input {
+  width: 100%;
+  padding: 0px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.label {
+  margin-bottom: 4px;
+}
+
+.input:focus-within .container {
+  border: 2px solid red;
+}

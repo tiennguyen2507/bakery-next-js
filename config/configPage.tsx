@@ -1,9 +1,7 @@
-import { NextPage } from "next";
-import signIn from "pages/sign-in";
-import { ComponentType, FC } from "react";
+import { ComponentType, FC, FunctionComponent } from "react";
 
 export type TypePageConfig = {
-  page: FC | NextPage<any>;
+  page: FunctionComponent<any>;
   middleware?: Array<Function>;
   layout?: <P extends object>(WrappedComponent: ComponentType<P>) => FC<P>;
   title?: string;
@@ -11,22 +9,10 @@ export type TypePageConfig = {
 
 export type TypeMiddlewareConfig = <P>(props: P) => boolean;
 
-export const PageConfig = ({
-  layout,
-  middleware,
-  page,
-  title,
-}: TypePageConfig) => {
+export const PageConfig = ({ layout, page, title }: TypePageConfig) => {
   const haveReturnLayout = layout ? layout(page) : page;
-  if (title) {
+  if (title && document) {
     document.title = title;
-  }
-  if (middleware) {
-    for (let index = 0; index < middleware.length; index++) {
-      if (!middleware[index]()) {
-        return signIn;
-      }
-    }
   }
   return haveReturnLayout;
 };

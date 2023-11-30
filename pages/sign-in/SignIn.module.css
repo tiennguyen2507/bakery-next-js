@@ -1,0 +1,28 @@
+.wrapper {
+  height: 100vh;
+}
+
+.thumbnail {
+  height: 100%;
+  flex-grow: 1;
+  background-size: cover;
+  object-fit: cover;
+  background-image: url("https://res.cloudinary.com/daqwg8oql/image/upload/v1700398879/bakery/banh-kem-tu-banh-ran-pancake-thumbnail-2_ejg0ak.jpg");
+}
+
+.thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  flex-basis: 580px;
+  padding: 16px;
+}
+
+@media (max-width: 580px) {
+  .thumbnail {
+    display: none;
+  }
+}

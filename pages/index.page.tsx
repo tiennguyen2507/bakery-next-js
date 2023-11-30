@@ -5,8 +5,8 @@ import { GetServerSideProps, NextPage } from "next";
 import { ListCake } from "types/cake.type";
 import { getAllCakesApi } from "api/cake.api";
 import { PageConfig } from "config/configPage";
-import Category from "./_elements/Category";
-import Selling from "./_elements/Selling";
+import Category from "./__components/Category";
+import Selling from "./__components/Selling";
 
 type homePageProps = {
   listCake: ListCake;

@@ -2,10 +2,10 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
-import { AxiosError } from "axios";
 import Cookies from "js-cookie";
 import type { LoginRequest } from "types/auth.type";
 import { useAuthApi } from "api/auth.api";
+import styles from "./FormSignIn.module.css";
 
 const FormSignInSchema = z.object({
   email: z
@@ -40,9 +40,9 @@ const FormSignIn = (): JSX.Element => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSignIn)}>
+    <form onSubmit={handleSubmit(onSignIn)} className={styles.wrapper}>
       {(error as { message: string })?.message && (
-        <div className="text-center py-2 bg-red-200 rounded border border-red-300">
+        <div>
           <BaseTypography weight={600} color="venetian-red">
             {(error as { message: string })?.message}
           </BaseTypography>
@@ -50,7 +50,6 @@ const FormSignIn = (): JSX.Element => {
       )}
       <BaseInput
         label="Email"
-        className="mb-3"
         error={formState.errors.email?.message}
         disabled={isLoading}
         {...register("email")}
@@ -58,7 +57,6 @@ const FormSignIn = (): JSX.Element => {
       <BaseInput
         label="Mật khẩu"
         type="password"
-        className="mb-3"
         disabled={isLoading}
         error={formState.errors.password?.message}
         {...register("password")}
@@ -69,7 +67,6 @@ const FormSignIn = (): JSX.Element => {
       <BaseButton
         type="submit"
         label="Đăng nhập"
-        className="w-full"
         loading={isLoading}
         disabled={!formState.isDirty}
       />

@@ -4,8 +4,10 @@
     "BaseIcon": true,
     "BaseInput": true,
     "BaseLoading": true,
+    "BaseModal": true,
     "BaseTypography": true,
     "CountNumber": true,
+    "FunctionComponent": true,
     "Header": true,
     "PickSize": true,
     "createRef": true,
@@ -29,7 +31,6 @@
     "useState": true,
     "useSyncExternalStore": true,
     "useTransition": true,
-    "FunctionComponent": true,
-    "BaseModal": true
+    "BaseFlexBox": true
   }
 }

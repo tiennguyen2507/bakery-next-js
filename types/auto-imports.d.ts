@@ -6,6 +6,7 @@
 export {}
 declare global {
   const BaseButton: typeof import('../components/atoms/BaseButton/index')['default']
+  const BaseFlexBox: typeof import('../components/atoms/BaseFlexBox/index')['default']
   const BaseIcon: typeof import('../components/atoms/BaseIcon/index')['default']
   const BaseInput: typeof import('../components/atoms/BaseInput/index')['default']
   const BaseLoading: typeof import('../components/atoms/BaseLoading/index')['default']
