@@ -1,5 +1,4 @@
 import { formatMoney } from "lib";
-import withLayoutUser from "layout/withLayoutUser";
 import { getOneCakeApi } from "api/cake.api";
 import { GetServerSideProps, NextPage } from "next";
 import { Cake } from "types/cake.type";
@@ -75,5 +74,4 @@ const Product: FunctionComponent<Props> = ({ cake }) => {
 
 export default PageConfig({
   page: Product,
-  layout: withLayoutUser,
 });

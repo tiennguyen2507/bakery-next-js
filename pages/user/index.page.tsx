@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps } from "next";
 import { PageConfig } from "config/configPage";
 import { BaseIconProps } from "components/atoms/BaseIcon";
@@ -84,5 +83,4 @@ const InfoItem = ({ label, value, icon }: InfoItemProps): JSX.Element => (
 
 export default PageConfig({
   page: User,
-  layout: withLayoutUser,
 });

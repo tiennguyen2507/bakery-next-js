@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "react-query";
 import { errorMessage } from "constants/error-message";
 import { useAuthApi } from "api/auth.api";
+import styles from "./FormSignUp.module.css";
 
 const FormSignUpSchema = z.object({
   email: z
@@ -38,42 +39,38 @@ const FormSignUp = (): JSX.Element => {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSignUp)}>
-      <div className="flex items-center justify-between gap-4">
+    <form onSubmit={handleSubmit(onSignUp)} className={styles.wrapper}>
+      <BaseFlexBox direction="column" gap={18}>
+        <div>
+          <BaseFlexBox gap={12}>
+            <BaseInput label="Tên" {...register("lastName")} />
+            <BaseInput label="Họ tên đệm" {...register("firstName")} />
+          </BaseFlexBox>
+          {(formState.errors.firstName || formState.errors.lastName) && (
+            <p className={styles.error}>{errorMessage.FULLNAME_REQUIRED}</p>
+          )}
+        </div>
         <BaseInput
-          label="Tên"
-          className="mb-3 w-32"
-          {...register("lastName")}
+          label="Email"
+          className="mb-3"
+          error={formState.errors.email?.message}
+          {...register("email")}
         />
         <BaseInput
-          label="Họ tên đệm"
-          className="mb-3 grow"
-          {...register("firstName")}
+          label="Mật khẩu"
+          type="password"
+          className="mb-3"
+          error={formState.errors.password?.message}
+          {...register("password")}
         />
-      </div>
-      {(formState.errors.firstName || formState.errors.lastName) && (
-        <p className="text-red-500">{errorMessage.FULLNAME_REQUIRED}</p>
-      )}
-      <BaseInput
-        label="Email"
-        className="mb-3"
-        error={formState.errors.email?.message}
-        {...register("email")}
-      />
-      <BaseInput
-        label="Mật khẩu"
-        type="password"
-        className="mb-3"
-        error={formState.errors.password?.message}
-        {...register("password")}
-      />
-      <BaseButton
-        type="submit"
-        label="Đăng ký"
-        className="w-full mt-10"
-        loading={isLoading}
-        disabled={!formState.isDirty}
-      />
+        <BaseButton
+          type="submit"
+          label="Đăng ký"
+          className={styles.button}
+          loading={isLoading}
+          disabled={!formState.isDirty}
+        />
+      </BaseFlexBox>
     </form>
   );
 };

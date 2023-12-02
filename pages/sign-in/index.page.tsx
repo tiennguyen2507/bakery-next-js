@@ -1,6 +1,8 @@
-import { GetServerSideProps } from "next";
 import SignIn from "./SignIn";
+import { GetServerSideProps } from "next";
 import { PageConfig } from "config/configPage";
+import AuthLayout from "layout/AuthLayout";
+
 const SignInPage = SignIn;
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
@@ -18,4 +20,5 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
 export default PageConfig({
   page: SignInPage,
+  layout: AuthLayout,
 });

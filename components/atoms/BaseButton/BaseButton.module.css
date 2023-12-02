@@ -1,0 +1,17 @@
+.button {
+  padding: 15px 25px;
+  font-weight: 900;
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.button:disabled {
+  background-color: var(--color-blue-white-20);
+  cursor: default;
+}

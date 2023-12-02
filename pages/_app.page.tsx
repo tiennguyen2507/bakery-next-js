@@ -9,9 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <GlobalStateProvider>
       <QueryClientProvider client={queryClient}>
-        <LoadingRouter>
           <Component {...pageProps} />
-        </LoadingRouter>
       </QueryClientProvider>
     </GlobalStateProvider>
   );

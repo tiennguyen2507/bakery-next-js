@@ -48,28 +48,30 @@ const FormSignIn = (): JSX.Element => {
           </BaseTypography>
         </div>
       )}
-      <BaseInput
-        label="Email"
-        error={formState.errors.email?.message}
-        disabled={isLoading}
-        {...register("email")}
-      />
-      <BaseInput
-        label="Mật khẩu"
-        type="password"
-        disabled={isLoading}
-        error={formState.errors.password?.message}
-        {...register("password")}
-      />
-      <BaseTypography align="end" weight={600} color="venetian-red">
-        Quên mật khẩu?
-      </BaseTypography>
-      <BaseButton
-        type="submit"
-        label="Đăng nhập"
-        loading={isLoading}
-        disabled={!formState.isDirty}
-      />
+      <BaseFlexBox direction="column" gap={18}>
+        <BaseInput
+          label="Email"
+          error={formState.errors.email?.message}
+          disabled={isLoading}
+          {...register("email")}
+        />
+        <BaseInput
+          label="Mật khẩu"
+          type="password"
+          disabled={isLoading}
+          error={formState.errors.password?.message}
+          {...register("password")}
+        />
+        <BaseTypography align="end" weight={600} color="venetian-red">
+          Quên mật khẩu?
+        </BaseTypography>
+        <BaseButton
+          type="submit"
+          label="Đăng nhập"
+          loading={isLoading}
+          disabled={!formState.isDirty}
+        />
+      </BaseFlexBox>
     </form>
   );
 };

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { formatMoney } from "lib";
-import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps } from "next";
 import { CartApi } from "api/cart.api";
 import { PageConfig } from "config/configPage";
@@ -93,5 +92,4 @@ const Cart: FunctionComponent<{ cart: any[] }> = ({ cart }) => {
 
 export default PageConfig({
   page: Cart,
-  layout: withLayoutUser,
 });

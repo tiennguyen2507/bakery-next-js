@@ -5,22 +5,25 @@ type TypeBaseFlexBox = {
   justify?: CSSProperties["justifyContent"];
   direction?: CSSProperties["flexDirection"];
   className?: string;
+  gap?: number;
 };
 
 const BaseFlexBox: FunctionComponent<PropsWithChildren<TypeBaseFlexBox>> = ({
   children,
-  align,
-  justify,
-  direction,
+  align = "initial",
+  justify = "initial",
+  direction = "initial",
   className,
+  gap = "initial",
 }) => {
   return (
     <div
       style={{
         display: "flex",
-        alignItems: align ? align : "initial",
-        justifyContent: justify ? justify : "initial",
-        flexDirection: direction ? direction : "initial",
+        alignItems: align,
+        justifyContent: justify,
+        flexDirection: direction,
+        gap,
       }}
       className={className}
     >

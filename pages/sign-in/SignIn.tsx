@@ -1,8 +1,10 @@
 import Cookies from "js-cookie";
-import { BottomSignIn, FormSignIn } from "./_components";
+import { FormSignIn } from "./_components";
 import styles from "./SignIn.module.css";
+import Link from "next/link";
+import { FunctionComponent } from "react";
 
-const SignIn = (): JSX.Element => {
+const SignIn: FunctionComponent = () => {
   const router = useRouter();
   useEffect(() => {
     const tokenCookie = Cookies.get("token");
@@ -11,23 +13,17 @@ const SignIn = (): JSX.Element => {
     }
   }, [router]);
   return (
-    <BaseFlexBox align="center" className={styles.wrapper}>
-      <div className={styles.thumbnail} />
-      <BaseFlexBox
-        direction="column"
-        align="center"
-        className={styles.container}
-      >
-        <BaseFlexBox align="center" direction="column">
-          <BaseTypography size="24px">Chào mừng bạn đã đến với</BaseTypography>
-          <BaseTypography size="3rem" weight={600}>
-            Tiệm Bánh Kem
+    <>
+      <FormSignIn />
+      <BaseFlexBox gap={4} className={styles.footer} align="center">
+        <BaseTypography>chưa có tài khoản!</BaseTypography>
+        <Link href="/sign-up">
+          <BaseTypography color="white" className={styles.signUp}>
+            Đăng ký
           </BaseTypography>
-        </BaseFlexBox>
-        <FormSignIn />
-        <BottomSignIn />
+        </Link>
       </BaseFlexBox>
-    </BaseFlexBox>
+    </>
   );
 };
 

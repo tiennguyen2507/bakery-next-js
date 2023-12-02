@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
 import BaseLoading from "../BaseLoading";
 import { BaseButtonProps } from "./index";
+import styles from "./BaseButton.module.css";
+import clsx from "clsx";
 
 const BaseButton: FunctionComponent<BaseButtonProps> = ({
   label = "",
@@ -9,13 +11,12 @@ const BaseButton: FunctionComponent<BaseButtonProps> = ({
   disabled = false,
   onClick = () => null,
   type = "button",
+  color = "primary",
 }) => {
   return (
     <button
       type={type}
-      className={`flex items-center justify-center gap-1 font-medium text-lg
-      bg-yellow-400 text-white disabled:bg-gray-200
-      rounded-lg py-3 px-5 active:bg-yellow-500 ${className}`}
+      className={clsx(styles.button, className, `bg-color-${color}`)}
       onClick={onClick}
       disabled={loading || disabled}
     >

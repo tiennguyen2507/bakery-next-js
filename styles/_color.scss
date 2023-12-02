@@ -10,23 +10,51 @@ $colors: (
   "half-spanish-white": #e8dfcb,
   "cello": #3b5662,
   "woodsmoke": #323736,
-  "venetian-red": #cf1c04,
-  "yellow-light": #ffd559,
+  "yellow": #ffd559,
+  "grey-blue-98": #f7f8fa,
   "grey-blue-97": #f5f6f7,
   "grey-blue-80": #adb8cc,
+  "blue": #3361ff,
+  "red": #e62e2e,
+  "venetian-red": #e62e2e,
+  "blue-white-20": #849ffa,
+);
+
+$colors-main: (
+  "primary": var(--color-blue),
+  "warning": var(--color-yellow),
+  "error": var(--color-red),
 );
 
 :root {
   @each $name, $value in $colors {
     --color-#{$name}: #{$value};
   }
-  --color-primary: var(--color-cello);
-  --color-warning: var(--color-half-spanish-white);
+
+  @each $name, $value in $colors-main {
+    --color-#{$name}: #{$value};
+  }
+
   --color-text: var(--color-woodsmoke);
+  --color-bg-gray: var(--color-grey-blue-98);
 }
 
 @each $name, $value in $colors {
   .color-#{$name} {
+    color: $value;
+  }
+
+  .bg-color-#{$name} {
+    color: $value;
+  }
+}
+
+@each $name, $value in $colors-main {
+  .bg-color-#{$name} {
+    background-color: $value;
+  }
+
+  .bg-color-#{$name} {
     color: $value;
   }
 }

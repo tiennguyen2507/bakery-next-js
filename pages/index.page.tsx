@@ -1,6 +1,5 @@
 import Image from "next/image";
 import slide01 from "assets/slide01.jpg";
-import withLayoutUser from "layout/withLayoutUser";
 import { GetServerSideProps, NextPage } from "next";
 import { ListCake } from "types/cake.type";
 import { getAllCakesApi } from "api/cake.api";
@@ -31,5 +30,4 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
 export default PageConfig({
   page: App,
-  layout: withLayoutUser,
 });

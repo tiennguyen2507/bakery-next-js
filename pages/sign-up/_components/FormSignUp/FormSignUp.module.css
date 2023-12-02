@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+}
+
+.error {
+  color: var(--color-error);
+  margin-top: 4px;
+}
