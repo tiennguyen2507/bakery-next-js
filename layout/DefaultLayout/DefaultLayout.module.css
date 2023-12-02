@@ -1,0 +1,23 @@
+.wrapper {
+  height: 100vh;
+  background-size: cover;
+}
+
+.container {
+  padding: 28px;
+  border-radius: 20px;
+  background: #ffffff7e;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  margin: 12px;
+}
+
+@media (max-width: 580px) {
+  .container {
+    padding: 28px 16px;
+    background: #ffffff39;
+  }
+}

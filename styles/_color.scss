@@ -11,8 +11,10 @@ $colors: (
   "cello": #3b5662,
   "woodsmoke": #323736,
   "yellow": #ffd559,
+  "grey-blue-95": #edeff2,
   "grey-blue-98": #f7f8fa,
   "grey-blue-97": #f5f6f7,
+  "grey-blue-85": #c3cad9,
   "grey-blue-80": #adb8cc,
   "blue": #3361ff,
   "red": #e62e2e,
@@ -36,7 +38,7 @@ $colors-main: (
   }
 
   --color-text: var(--color-woodsmoke);
-  --color-bg-gray: var(--color-grey-blue-98);
+  --color-bg-main: var(--color-grey-blue-98);
 }
 
 @each $name, $value in $colors {

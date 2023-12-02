@@ -19,11 +19,7 @@ const Selling: FunctionComponent<Props> = ({ data }) => {
                 className="bg-[#F6F8FA] mb-4 rounded-xl items-start gap-4 p-2 relative shadow-lg
                cursor-pointer"
               >
-                <img
-                  src={image}
-                  alt="cake-image"
-                  className="w-full rounded-xl object-cover aspect-[4/3]"
-                />
+                <img src={image} alt="cake-image" width={200} />
                 <div className="flex-grow">
                   <BaseTypography size="16px" weight={500} color="woodsmoke">
                     {title}

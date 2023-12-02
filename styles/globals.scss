@@ -1,9 +1,13 @@
 *,
-html,
-body {
+html {
   margin: 0px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  box-sizing: border-box;
 }
 
 a {

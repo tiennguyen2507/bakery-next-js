@@ -1,0 +1,23 @@
+.wrapper {
+  height: 70px;
+  border-bottom: 2px solid var(--color-grey-blue-95);
+  width: 100vw;
+  padding: 0px 24px;
+}
+
+.buttonIcon {
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.buttonIcon:hover {
+  background: var(--color-grey-blue-95);
+}
+
+@media (max-width: 580px) {
+  .wrapper {
+    padding: 0px 12px;
+  }
+}
