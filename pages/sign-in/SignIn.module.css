@@ -4,10 +4,10 @@
 
 .thumbnail {
   height: 100%;
+  padding: 10px;
   flex-grow: 1;
   background-size: cover;
   object-fit: cover;
-  background-image: url("https://res.cloudinary.com/daqwg8oql/image/upload/v1700398879/bakery/banh-kem-tu-banh-ran-pancake-thumbnail-2_ejg0ak.jpg");
 }
 
 .thumbnail > img {
@@ -17,7 +17,7 @@
 }
 
 .container {
-  flex-basis: 580px;
+  flex-basis: 480px;
   padding: 16px;
 }
 

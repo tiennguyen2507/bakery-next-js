@@ -20,7 +20,7 @@ export default React.forwardRef<HTMLInputElement, BaseInputProps>(
       <div className={styles.wrapper}>
         {label && (
           <label htmlFor="1">
-            <BaseTypography weight={600} className={styles.label}>
+            <BaseTypography weight={500} className={styles.label}>
               {label}
             </BaseTypography>
           </label>

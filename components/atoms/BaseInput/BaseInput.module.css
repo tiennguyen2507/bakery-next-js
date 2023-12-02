@@ -22,6 +22,6 @@
   margin-bottom: 4px;
 }
 
-.input:focus-within .container {
-  border: 2px solid red;
+.container:focus-within {
+  border: 2px solid var(--color-grey-blue-80);
 }
