@@ -39,7 +39,11 @@ const FormSignUp = (): JSX.Element => {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSignUp)} className={styles.wrapper}>
+    <form
+      onSubmit={handleSubmit(onSignUp)}
+      className={styles.wrapper}
+      autoComplete="off"
+    >
       <BaseFlexBox direction="column" gap={18}>
         <div>
           <BaseFlexBox gap={12}>
