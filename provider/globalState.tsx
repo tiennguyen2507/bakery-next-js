@@ -1,4 +1,10 @@
+import dynamic from "next/dynamic";
 import { FC, PropsWithChildren, createContext } from "react";
+
+const Notification = dynamic(
+  () => import("components/molecules/Notification"),
+  { ssr: false }
+);
 
 type TypeglobalStateValue = {
   isLogin: boolean;
@@ -13,10 +19,10 @@ const defaulState = {
 const GlobalState = createContext<TypeglobalStateValue>(defaulState);
 
 const GlobalStateProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [islogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(true);
 
   const globalStateValue = {
-    isLogin: islogin,
+    isLogin: isLogin,
     setIsLogin: (value: boolean) => setIsLogin(value),
   };
 

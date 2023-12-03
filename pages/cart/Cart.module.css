@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.title {
+  margin: 12px 0;
+}
+
+.loading {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPay {
+  width: 100%;
+  margin-top: 12px;
+}

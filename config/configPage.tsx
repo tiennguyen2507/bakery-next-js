@@ -1,11 +1,9 @@
-import { FC, FunctionComponent } from "react";
+import { ComponentType, FunctionComponent } from "react";
 
 export type TypePageConfig = {
-  page: FunctionComponent<any>;
+  page: FunctionComponent<any> | ComponentType<any>;
   middleware?: Array<Function>;
-  layout?: <P extends object>(
-    Component: FunctionComponent<P>
-  ) => FunctionComponent<P>;
+  layout?: any;
   title?: string;
 };
 

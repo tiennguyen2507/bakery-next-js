@@ -49,22 +49,20 @@ $colors-main: (
   }
 
   .bg-color-#{$name} {
+    background-color: $value;
+  }
+
+  .icon-color-#{$name}::before {
     color: $value;
   }
 }
 
 @each $name, $value in $colors-main {
   .color-#{$name} {
-    background-color: $value;
+    color: $value;
   }
 
   .bg-color-#{$name} {
-    color: $value;
-  }
-}
-
-@each $name, $value in $colors {
-  .icon-color-#{$name}::before {
-    color: $value;
+    background-color: $value;
   }
 }

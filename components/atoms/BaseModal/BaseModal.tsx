@@ -34,7 +34,7 @@ const BaseModal: FunctionComponent<PropsWithChildren<TypeBaseModal>> = ({
           {title}
         </BaseTypography>
         <BaseIcon
-          name="cancel-circle"
+          name="cross"
           size="20px"
           cursorPointer
           onClick={onCloseModal}
@@ -57,6 +57,7 @@ const BaseModal: FunctionComponent<PropsWithChildren<TypeBaseModal>> = ({
       </div>
     );
   };
+
   return isOpen ? createPortal(ModalWrapper(), document.body) : null;
 };
 

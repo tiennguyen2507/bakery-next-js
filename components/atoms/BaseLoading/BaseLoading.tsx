@@ -4,13 +4,13 @@ import Image from "next/image";
 interface LoadingProps {
   size?: string;
   inline?: boolean;
-  classname?: string;
+  className?: string;
 }
-const BaseLoading = ({ size = "24", inline, classname }: LoadingProps) => {
+const BaseLoading = ({ size = "24", inline, className }: LoadingProps) => {
   if (inline) {
     return (
       <Image
-        className={classname}
+        className={className}
         style={{ width: size && `${size}px`, height: size && `${size}px` }}
         src={resources.SPIN}
         alt="hello"
@@ -18,7 +18,7 @@ const BaseLoading = ({ size = "24", inline, classname }: LoadingProps) => {
     );
   }
   return (
-    <div className={classname}>
+    <div className={className}>
       <Image
         style={{ width: size && `${size}px`, height: size && `${size}px` }}
         src={resources.SPIN}

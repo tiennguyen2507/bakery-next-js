@@ -1,15 +1,7 @@
 import { MouseEventHandler } from "react";
 
 export type BaseIconProps = {
-  name:
-    | "menu"
-    | "cart"
-    | "email"
-    | "history"
-    | "clock"
-    | "user"
-    | "cancel-circle"
-    | "warning";
+  name: string;
   className?: string;
   size?: string;
   onClick?: MouseEventHandler | undefined;
