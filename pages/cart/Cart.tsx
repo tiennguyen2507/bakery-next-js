@@ -3,7 +3,7 @@ import { useCartApi } from "api/cart.api";
 import { PageConfig } from "config/configPage";
 import { useQuery } from "react-query";
 import styles from "./Cart.module.css";
-import CartItem from "./_components/CartItem/CartItem";
+import { CartItem } from "./_components";
 
 const Cart: FunctionComponent = () => {
   const cartApi = useCartApi();
