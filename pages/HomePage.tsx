@@ -1,9 +1,6 @@
-import Image from "next/image";
-import slide01 from "assets/slide01.jpg";
 import { ListCake } from "types/cake.type";
 import { PageConfig } from "config/configPage";
-import Category from "./__components/Category";
-import Selling from "./__components/Selling";
+import Selling from "./__components/HomeProducts/HomeProducts";
 import { FunctionComponent } from "react";
 import styles from "./HomePage.module.css";
 
@@ -22,7 +19,11 @@ const App: FunctionComponent<homePageProps> = ({ listCake }) => {
         />
         {/* <Category /> */}
       </div>
-      {listCake && <Selling data={listCake} />}
+      {listCake && (
+        <div className={styles.products}>
+          <Selling data={listCake} title="Bán chạy" />
+        </div>
+      )}
     </div>
   );
 };

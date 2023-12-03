@@ -1,15 +1,15 @@
-import { CSSProperties, FunctionComponent, ReactNode } from "react";
+import clsx from "clsx";
+import { CSSProperties, FunctionComponent, PropsWithChildren } from "react";
 
 interface BaseTextProps {
   size?: string;
   color?: string;
   weight?: CSSProperties["fontWeight"];
   className?: string;
-  children: ReactNode;
   align?: CSSProperties["textAlign"];
 }
 
-const BaseTypography: FunctionComponent<BaseTextProps> = ({
+const BaseTypography: FunctionComponent<PropsWithChildren<BaseTextProps>> = ({
   children,
   weight,
   size,
@@ -23,17 +23,12 @@ const BaseTypography: FunctionComponent<BaseTextProps> = ({
         fontWeight: weight,
         fontSize: size,
         textAlign: align,
-        color: `color-${color}`,
       }}
-      className={`color-${color} ${className}`}
+      className={clsx(color && `color-${color}`, className)}
     >
       {children}
     </p>
   );
-};
-
-BaseTypography.defaultProps = {
-  color: "woodsmoke",
 };
 
 export default BaseTypography;

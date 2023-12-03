@@ -16,6 +16,8 @@ $colors: (
   "grey-blue-97": #f5f6f7,
   "grey-blue-85": #c3cad9,
   "grey-blue-80": #adb8cc,
+  "grey-blue-70": #7d8fb3,
+  "grey-blue-50": #4d5e80,
   "blue": #3361ff,
   "red": #e62e2e,
   "venetian-red": #e62e2e,
@@ -37,7 +39,7 @@ $colors-main: (
     --color-#{$name}: #{$value};
   }
 
-  --color-text: var(--color-woodsmoke);
+  --color-text: var(--color-grey-blue-50);
   --color-bg-main: var(--color-grey-blue-98);
 }
 
@@ -52,7 +54,7 @@ $colors-main: (
 }
 
 @each $name, $value in $colors-main {
-  .bg-color-#{$name} {
+  .color-#{$name} {
     background-color: $value;
   }
 

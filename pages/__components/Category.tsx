@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import vagetable from "../../assets/vegetable.png";
-import cake from "../../assets/cakeVector.png";
-import nguQua from "../../assets/nguQuaVector.png";
-import phaoHoa from "../../assets/phaoVector.png";
+import vagetable from "assets/vegetable.png";
+import cake from "assets/cakeVector.png";
+import nguQua from "assets/nguQuaVector.png";
+import phaoHoa from "assets/phaoVector.png";
 
 type Props = {};
 

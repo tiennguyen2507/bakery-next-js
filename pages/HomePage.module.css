@@ -4,6 +4,10 @@
   height: 200px;
 }
 
+.products {
+  padding: 16px;
+}
+
 @media (max-width: 580px) {
   .slide {
     height: 120px;

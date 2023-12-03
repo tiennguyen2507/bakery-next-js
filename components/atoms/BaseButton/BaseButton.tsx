@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-import BaseLoading from "../BaseLoading";
 import { BaseButtonProps } from "./index";
 import styles from "./BaseButton.module.css";
 import clsx from "clsx";
@@ -16,7 +15,7 @@ const BaseButton: FunctionComponent<BaseButtonProps> = ({
   return (
     <button
       type={type}
-      className={clsx(styles.button, className, `bg-color-${color}`)}
+      className={clsx(styles.button, `bg-color-${color}`, className)}
       onClick={onClick}
       disabled={loading || disabled}
     >
