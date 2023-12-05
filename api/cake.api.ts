@@ -5,7 +5,7 @@ export const getAllCakesApi = (token?: string): Promise<ListCake> =>
   httpRequestGssp({ token })
     .get("/product")
     .then((res) => res.data.data)
-    .catch(() => null);
+    .catch(() => []);
 
 export const getOneCakeApi = (
   token: string | undefined,
