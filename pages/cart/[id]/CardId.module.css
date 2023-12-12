@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 2rem 0px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.productImg {
+  max-width: 50%;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  object-fit: cover;
+}

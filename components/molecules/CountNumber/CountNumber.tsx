@@ -1,4 +1,5 @@
 import { useController, UseControllerProps } from "react-hook-form";
+import styles from "./CountNumber.module.css";
 
 export type TypePickSizeProps = {
   control?: UseControllerProps<any, string>;
@@ -8,26 +9,26 @@ const CountNumber: React.FC<TypePickSizeProps> = ({ control }) => {
   const controll = control && useController(control);
 
   return (
-    <div className="flex items-center gap-5">
+    <BaseFlexBox gap={16} className={styles.wrapper} align="start">
       <button
         type="button"
-        className="px-6 py-2 bg-[#FE4A7A] text-white rounded-xl active:bg-pink-500"
+        className={styles.countBtn}
         onClick={() =>
           controll?.field.value > 1 &&
           controll?.field.onChange(controll?.field.value - 1)
         }
       >
-        -
+        <BaseIcon name="minus" size="8px" cursorPointer />
       </button>
-      <p className="m-0 text-lg font-bold">{controll?.field.value || 1}</p>
+      <BaseTypography weight={600}>{controll?.field.value || 1}</BaseTypography>
       <button
         type="button"
-        className="px-6 py-2 bg-[#FE4A7A] text-white rounded-xl active:bg-pink-500"
+        className={styles.countBtn}
         onClick={() => controll?.field.onChange(controll?.field.value + 1)}
       >
-        +
+        <BaseIcon name="plus" size="8px" cursorPointer />
       </button>
-    </div>
+    </BaseFlexBox>
   );
 };
 

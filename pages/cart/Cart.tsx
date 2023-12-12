@@ -1,11 +1,10 @@
-import React, { FunctionComponent } from "react";
 import { useCartApi } from "api/cart.api";
 import { PageConfig } from "config/configPage";
 import { useQuery } from "react-query";
 import styles from "./Cart.module.css";
 import { CartItem } from "./_components";
 
-const Cart: FunctionComponent = () => {
+const Cart: FC = () => {
   const cartApi = useCartApi();
   const { data: cart, isLoading } = useQuery({
     queryFn: () =>

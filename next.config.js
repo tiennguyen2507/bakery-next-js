@@ -15,7 +15,7 @@ const nextConfig = {
       AutoImport({
         imports: [
           "react",
-          { from: "react", type: true, imports: ["FunctionComponent"] },
+          { from: "react", type: true, imports: ["FunctionComponent", "FC"] },
           { from: "next/router", imports: ["useRouter"] },
         ],
         dts: resolve(__dirname, "types/auto-imports.d.ts"),

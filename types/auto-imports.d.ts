@@ -40,6 +40,6 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { FunctionComponent } from 'react'
+  export type { FunctionComponent, FC } from 'react'
   import('react')
 }

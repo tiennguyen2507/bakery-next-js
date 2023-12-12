@@ -10,35 +10,17 @@ const Header = (): JSX.Element => {
       justify="space-between"
       className={styles.wrapper}
     >
-      <Link href="/user">
-        <BaseFlexBox
-          justify="center"
-          align="center"
-          className={styles.buttonIcon}
-        >
-          <BaseIcon
-            name="menu"
-            className="text-gray-500"
-            color="grey-blue-85"
-          />
-        </BaseFlexBox>
-      </Link>
-      <Link href="/">
+      <Link href="/" className={styles.logo}>
         <Image src={logo} alt="log" height={50} />
       </Link>
-      <Link href="/cart">
-        <BaseFlexBox
-          justify="center"
-          align="center"
-          className={styles.buttonIcon}
-        >
-          <BaseIcon
-            name="cart"
-            className="text-gray-500"
-            color="grey-blue-85"
-          />
-        </BaseFlexBox>
-      </Link>
+      <BaseFlexBox gap={24}>
+        <Link href="/cart" className={styles.buttonIcon}>
+          <BaseIcon name="cart" size="20px" color="white" />
+        </Link>
+        <Link href="/user" className={styles.buttonIcon}>
+          <BaseIcon name="user" size="24px" color="white" cursorPointer />
+        </Link>
+      </BaseFlexBox>
     </BaseFlexBox>
   );
 };

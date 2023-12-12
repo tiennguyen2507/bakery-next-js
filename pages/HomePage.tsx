@@ -1,12 +1,11 @@
 import { ListCake } from "types/cake.type";
 import { PageConfig } from "config/configPage";
 import Selling from "./__components/HomeProducts";
-import { FunctionComponent } from "react";
 import styles from "./HomePage.module.css";
 
 type homePageProps = { listCake: ListCake };
 
-const App: FunctionComponent<homePageProps> = ({ listCake }) => {
+const App: FC<homePageProps> = ({ listCake }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.thumbnail}>
