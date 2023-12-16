@@ -7,6 +7,7 @@ import HomePage from "./HomePage";
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const listCake = await getAllCakesApi(req.cookies["token"]);
+
   return {
     props: { listCake },
   };

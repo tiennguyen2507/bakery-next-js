@@ -5,17 +5,15 @@ import AuthLayout from "layout/AuthLayout";
 
 const SignInPage = SignIn;
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps<any> = async ({ req }) => {
   const token = req.cookies["token"];
   if (token) {
     return {
-      redirect: {
-        destination: "/user",
-      },
+      redirect: { destination: "/user" },
       props: {},
     };
   }
-  return { props: { a: 5 } };
+  return { props: {} };
 };
 
 export default PageConfig({

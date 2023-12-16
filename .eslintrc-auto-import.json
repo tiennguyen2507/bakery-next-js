@@ -1,12 +1,14 @@
 {
   "globals": {
     "BaseButton": true,
+    "BaseFlexBox": true,
     "BaseIcon": true,
     "BaseInput": true,
     "BaseLoading": true,
     "BaseModal": true,
     "BaseTypography": true,
     "CountNumber": true,
+    "FC": true,
     "FunctionComponent": true,
     "Header": true,
     "PickSize": true,
@@ -30,8 +32,6 @@
     "useRouter": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true,
-    "BaseFlexBox": true,
-    "FC": true
+    "useTransition": true
   }
 }
