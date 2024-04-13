@@ -1,7 +1,7 @@
 import styles from "./AuthLayout.module.css";
 
-const AuthLayout = <P extends object>(Component: FunctionComponent<P>) => {
-  const Layout: FunctionComponent<P> = (props) => (
+function AuthLayout<T>(Component: React.FC<T>) {
+  return (props: T & Object) => (
     <BaseFlexBox align="center" justify="center" className={styles.wrapper}>
       <BaseFlexBox
         direction="column"
@@ -23,8 +23,6 @@ const AuthLayout = <P extends object>(Component: FunctionComponent<P>) => {
       </BaseFlexBox>
     </BaseFlexBox>
   );
-
-  return Layout;
-};
+}
 
 export default AuthLayout;

@@ -15,7 +15,7 @@ const SignIn: FunctionComponent = () => {
   return (
     <>
       <FormSignIn />
-      <BaseFlexBox gap={4} className={styles.footer} align="center">
+      <BaseFlexBox tag="span" gap={4} className={styles.footer} align="center">
         <BaseTypography>chưa có tài khoản!</BaseTypography>
         <Link href="/sign-up">
           <BaseTypography color="white" className={styles.signUp}>

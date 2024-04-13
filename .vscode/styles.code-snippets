@@ -1,0 +1,11 @@
+{
+  "clss": {
+    "prefix": "respone-PC",
+    "body": [
+      "@media (max-width: 580px) {",
+      "$1"
+      "}"
+    ],
+    "description": ""
+  }
+}

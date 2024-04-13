@@ -1,0 +1,23 @@
+{
+  "hello": {
+    "prefix": "hello",
+    "body": [
+      "$TM_FILENAME_BASE export default PageConfig({",
+      "  page: App,",
+      "});",
+      ""
+    ],
+    "description": "noname"
+  },
+
+  "className": {
+    "prefix": "className",
+    "body": ["className={styles.$1}"],
+    "description": ""
+  },
+  "react-FC-element": {
+    "prefix": "react-FC-element",
+    "body": ["export const $TM_FILENAME_BASE: React.FC = () => <>$1</>;"],
+    "description": ""
+  }
+}
