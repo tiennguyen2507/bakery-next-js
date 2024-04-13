@@ -1,7 +1,7 @@
 import "styles/index.scss";
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
-import GlobalStateProvider from "provider/globalState";
+import GlobalStateProvider from "components/provider/globalState";
 import LoadingRouter from "config/LoadingRouter";
 import { trpc } from "config/server/trpc";
 import {

@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic";
 import { FC, PropsWithChildren, createContext } from "react";
 
-const Notification = dynamic(
-  () => import("components/molecules/Notification"),
-  { ssr: false }
-);
+const Notification = dynamic(() => import("components/features/Notification"), {
+  ssr: false,
+});
 
 type TypeglobalStateValue = {
   isLogin: boolean;
