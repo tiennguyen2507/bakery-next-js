@@ -11,7 +11,7 @@ interface BaseInputProps {
 }
 
 const BaseInput = React.forwardRef<HTMLInputElement, BaseInputProps>(
-  ({ label, type = "text", className, error, ...props }, ref) => (
+  ({ label, className, error, ...props }, ref) => (
     <div>
       {label && <label className={styles.label}>{label}</label>}
       <input ref={ref} className={styles.input} {...props} />
