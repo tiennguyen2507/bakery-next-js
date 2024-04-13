@@ -1,6 +1,6 @@
 import { PageConfig } from "config/configPage";
 import dynamic from "next/dynamic";
-import DefaultLayout from "layout/DefaultLayout";
+import DefaultLayout from "components/layout/DefaultLayout";
 
 const Cart = dynamic(() => import("./Cart"), { ssr: false });
 

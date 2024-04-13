@@ -1,7 +1,7 @@
 import SignIn from "./SignIn";
 import { GetServerSideProps } from "next";
 import { PageConfig } from "config/configPage";
-import AuthLayout from "layout/AuthLayout";
+import AuthLayout from "components/layout/AuthLayout";
 
 const SignInPage = SignIn;
 

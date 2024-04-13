@@ -2,7 +2,7 @@ import { getOneCakeApi } from "api/cake.api";
 import { GetServerSideProps } from "next";
 import { PageConfig } from "config/configPage";
 import Product from "./CardId";
-import DefaultLayout from "layout/DefaultLayout";
+import DefaultLayout from "components/layout/DefaultLayout";
 
 export const getServerSideProps: GetServerSideProps = async ({
   params,

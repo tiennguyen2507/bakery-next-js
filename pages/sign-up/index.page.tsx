@@ -1,5 +1,5 @@
 import { PageConfig } from "config/configPage";
-import AuthLayout from "layout/AuthLayout";
+import AuthLayout from "components/layout/AuthLayout";
 import SignUp from "./SignUp";
 
 const SignUpPage = SignUp;
