@@ -2,7 +2,6 @@ import { PageConfig } from "config/configPage";
 import DefaultLayout from "layout/DefaultLayout";
 import { GetServerSideProps } from "next";
 import { getAllCakesApi } from "api/cake.api";
-
 import HomePage from "./HomePage";
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {

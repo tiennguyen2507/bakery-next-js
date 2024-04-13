@@ -6,7 +6,6 @@
 .container {
   padding: 28px;
   border-radius: 20px;
-  background: #ffffff7e;
   max-width: 500px;
   width: 100%;
 }
@@ -18,6 +17,5 @@
 @media (max-width: 580px) {
   .container {
     padding: 28px 16px;
-    background: #ffffff39;
   }
 }
