@@ -1,33 +1,26 @@
-import clsx from "clsx";
-import { CSSProperties, FunctionComponent, PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren, createElement } from "react";
 
-interface BaseTextProps {
+type Props = PropsWithChildren<{
   size?: string;
   color?: string;
   weight?: CSSProperties["fontWeight"];
   className?: string;
   align?: CSSProperties["textAlign"];
-}
+  tag?: string;
+}>;
 
-const BaseTypography: FunctionComponent<PropsWithChildren<BaseTextProps>> = ({
-  children,
-  weight,
-  size,
-  className = "",
-  align,
-  color,
-}) => {
-  return (
-    <p
-      style={{
-        fontWeight: weight,
-        fontSize: size,
-        textAlign: align,
-      }}
-      className={clsx(color && `color-${color}`, className)}
-    >
-      {children}
-    </p>
+const BaseTypography: React.FC<Props> = (props) => {
+  const style = {
+    fontWeight: props.weight,
+    fontSize: props.size,
+    textAlign: props.align,
+    color: props.color && `var(--color-${props.color})`,
+  };
+
+  return createElement(
+    props.tag || "p",
+    { style, className: props.className },
+    props.children
   );
 };
 

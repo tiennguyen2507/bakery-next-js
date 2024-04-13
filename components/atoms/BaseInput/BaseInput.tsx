@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from "react";
+import React from "react";
 import styles from "./BaseInput.module.css";
 
 interface BaseInputProps {
@@ -8,34 +8,20 @@ interface BaseInputProps {
   value?: string;
   error?: string;
   disabled?: boolean;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-export default React.forwardRef<HTMLInputElement, BaseInputProps>(
-  function BaseInput(
-    { label, type, className, error, disabled, ...props },
-    ref
-  ) {
-    return (
-      <div className={styles.wrapper}>
-        {label && (
-          <label htmlFor="1">
-            <BaseTypography weight={500} className={styles.label}>
-              {label}
-            </BaseTypography>
-          </label>
-        )}
-        <div className={styles.container}>
-          <input
-            ref={ref}
-            className={styles.input}
-            type={type}
-            disabled={disabled}
-            {...props}
-          />
-        </div>
-        {error && <p className={styles.error}>{error}</p>}
-      </div>
-    );
-  }
+const BaseInput = React.forwardRef<HTMLInputElement, BaseInputProps>(
+  ({ label, type = "text", className, error, ...props }, ref) => (
+    <div>
+      {label && <label className={styles.label}>{label}</label>}
+      <input ref={ref} className={styles.input} {...props} />
+      {error && (
+        <BaseTypography color="red" size="12px" className={styles.error}>
+          {error}
+        </BaseTypography>
+      )}
+    </div>
+  )
 );
+
+export default BaseInput;

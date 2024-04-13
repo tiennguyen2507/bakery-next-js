@@ -15,10 +15,10 @@ const Header = (): JSX.Element => {
       </Link>
       <BaseFlexBox gap={24}>
         <Link href="/cart" className={styles.buttonIcon}>
-          <BaseIcon name="cart" size="20px" color="white" />
+          <BaseIcon name="cart" size="20px" color="black" />
         </Link>
         <Link href="/user" className={styles.buttonIcon}>
-          <BaseIcon name="user" size="24px" color="white" cursorPointer />
+          <BaseIcon name="user" size="24px" color="black" cursorPointer />
         </Link>
       </BaseFlexBox>
     </BaseFlexBox>
