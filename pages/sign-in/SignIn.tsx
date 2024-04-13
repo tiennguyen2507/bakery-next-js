@@ -3,6 +3,7 @@ import { FormSignIn } from "./_components";
 import styles from "./SignIn.module.css";
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import { trpc } from "service/trpc";
 
 const SignIn: FunctionComponent = () => {
   const router = useRouter();
@@ -12,6 +13,10 @@ const SignIn: FunctionComponent = () => {
       router.push("/user");
     }
   }, [router]);
+
+  const data = trpc.auth.hello.useQuery();
+  console.log(data);
+
   return (
     <>
       <FormSignIn />

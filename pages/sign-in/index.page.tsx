@@ -7,6 +7,7 @@ const SignInPage = SignIn;
 
 export const getServerSideProps: GetServerSideProps<any> = async ({ req }) => {
   const token = req.cookies["token"];
+
   if (token) {
     return {
       redirect: { destination: "/user" },

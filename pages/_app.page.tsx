@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import GlobalStateProvider from "components/provider/globalState";
 import LoadingRouter from "config/LoadingRouter";
-import { trpc } from "config/server/trpc";
+import { trpc } from "service/trpc";
 import {
   QueryClient as TrpcQueryClient,
   QueryClientProvider as TrpcQueryClientProvider,
