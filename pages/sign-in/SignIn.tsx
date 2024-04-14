@@ -14,9 +14,6 @@ const SignIn: FunctionComponent = () => {
     }
   }, [router]);
 
-  const data = trpc.auth.hello.useQuery();
-  console.log(data);
-
   return (
     <>
       <FormSignIn />
