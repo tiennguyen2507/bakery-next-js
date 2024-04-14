@@ -2,7 +2,7 @@
   "clss": {
     "prefix": "respone-PC",
     "body": [
-      "@media (max-width: 580px) {",
+      "@media (width >= 580px) {",
       "$1"
       "}"
     ],

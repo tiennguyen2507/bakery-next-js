@@ -17,13 +17,7 @@
   max-width: 50px;
 }
 
-@media (max-width: 580px) {
-  .slide {
-    height: calc(100vh - 78px);
-  }
-}
-
-@media (max-width: 580px) {
+@media (width >= 580px) {
   .slide {
     height: calc(100vh - 78px);
   }

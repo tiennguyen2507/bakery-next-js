@@ -5,11 +5,12 @@
   border: none;
   line-height: 20px;
   border-radius: 5px;
+  border: 2px solid var(--color-grey-blue-80);
 }
 
 .input:focus {
   border: 2px solid var(--color-primary);
-  padding: 8px;
+  padding: 10px;
 }
 
 .label {

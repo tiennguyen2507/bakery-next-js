@@ -6,9 +6,9 @@
 }
 
 .container {
-  padding: 28px;
+  padding: 28px 16px;
   border-radius: 20px;
-  background: #ffffff7e;
+  background: #ffffff39;
   max-width: 350px;
   width: 100%;
 }
@@ -17,9 +17,8 @@
   margin: 12px;
 }
 
-@media (max-width: 580px) {
+@media (width >= 580px) {
   .container {
     padding: 28px 16px;
-    background: #ffffff39;
   }
 }

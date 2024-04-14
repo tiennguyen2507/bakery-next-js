@@ -11,7 +11,7 @@
   margin-top: 8px;
 }
 
-@media (max-width: 580px) {
+@media (width >= 580px) {
   .wrapper {
     padding-top: 10px;
   }
