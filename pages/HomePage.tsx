@@ -6,7 +6,7 @@ import Container from "components/Container";
 
 const HomePage: React.FC = () => {
   return (
-    <div className={styles.wrapper}>
+    <>
       <SliderImage options={settingsSlider}>
         {sliderData.map(({ src, srcSP }, key) => (
           <picture key={key}>
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
           <Card data={product} key={key} />
         ))}
       </Container>
-    </div>
+    </>
   );
 };
 

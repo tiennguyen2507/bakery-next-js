@@ -6,11 +6,9 @@ import styles from "./FooterMain.module.css";
 const FooterMain: FC = () => {
   return (
     <footer className={styles.wrapper}>
-      <Container>
-        <FooterMainTop />
-        <FooterMainLink />
-        <FooterMainInfo />
-      </Container>
+      <FooterMainTop />
+      <FooterMainLink />
+      <FooterMainInfo />
     </footer>
   );
 };

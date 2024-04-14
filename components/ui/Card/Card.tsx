@@ -17,7 +17,7 @@ const Card: FC<CardProps> = ({ data }) => {
   const percentPriceDown =
     Math.floor(((data.price - data.priceCurrent) / data.price) * 100) || null;
   return (
-    <div className={styles.wrapper}>
+    <BaseFlexBox direction="column" gap={4} className={styles.wrapper}>
       <div className={styles.cardImgContainer}>
         <img
           className={styles.cardImg}
@@ -42,11 +42,11 @@ const Card: FC<CardProps> = ({ data }) => {
           </BaseFlexBox>
         </BaseFlexBox>
       </div>
-      <BaseTypography size="24px">{data.title}</BaseTypography>
-      <BaseTypography size="14px">
+      <BaseTypography size="16px">{data.title}</BaseTypography>
+      <BaseTypography size="12px">
         {data.subTitle}/{"Xanh đen"}
       </BaseTypography>
-      <BaseFlexBox gap={16}>
+      <BaseFlexBox gap={16} align="flex-end" justify="space-between">
         {data.price && (
           <BaseTypography size="20px">
             {data.priceCurrent.toLocaleString("vi-VN", {
@@ -57,7 +57,7 @@ const Card: FC<CardProps> = ({ data }) => {
         )}
         {data.price && (
           <BaseTypography
-            size="20px"
+            size="12px"
             color="grey-blue-80"
             className={styles.priceMain}
           >
@@ -69,12 +69,12 @@ const Card: FC<CardProps> = ({ data }) => {
         )}
 
         {percentPriceDown && (
-          <BaseTypography size="20px" color="red">
+          <BaseTypography size="12px" color="red">
             -{percentPriceDown}%
           </BaseTypography>
         )}
       </BaseFlexBox>
-    </div>
+    </BaseFlexBox>
   );
 };
 
