@@ -25,14 +25,14 @@ const LinkSession: FC<{ data: FooterLinkType }> = ({ data }) => (
   <BaseFlexBox direction="column" gap={32}>
     {data.map(({ title, children }, key) => (
       <div key={key}>
-        <BaseTypography color="white" size={16} className={styles.title}>
+        <BaseTypography color="white" size="16px" className={styles.title}>
           {title}
         </BaseTypography>
         <BaseFlexBox direction="column" gap={10}>
           {children &&
             children.map(({ name, path }, keyChild) => (
               <Link href={path} key={keyChild}>
-                <BaseTypography color="white" size={11}>
+                <BaseTypography color="white" size="11px">
                   {name}
                 </BaseTypography>
               </Link>

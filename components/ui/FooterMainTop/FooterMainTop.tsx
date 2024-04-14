@@ -14,12 +14,12 @@ const FooterMainTop: FC = () => (
 
 const Commend: FC = () => (
   <div className={styles.commend}>
-    <BaseTypography color="white" weight={600} size={21}>
+    <BaseTypography color="white" weight={600} size="21px">
       {commend.title}
     </BaseTypography>
     <BaseTypography
       color="white"
-      size={13}
+      size="13px"
       className={styles.contactDescription}
     >
       {commend.description}

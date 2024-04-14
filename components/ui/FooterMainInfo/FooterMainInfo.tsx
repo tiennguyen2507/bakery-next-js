@@ -6,10 +6,10 @@ const FooterMainInfo: FC = () => {
   return (
     <BaseFlexBox justify="space-between" className={styles.wrapper}>
       <div>
-        <BaseTypography color="white" size={11}>
+        <BaseTypography color="white" size="11px">
           @ CÔNG TY TNHH FASTECH ASIA
         </BaseTypography>
-        <BaseTypography color="white" size={11}>
+        <BaseTypography color="white" size="11px">
           Mã số doanh nghiệp: 0108617038. Giấy chứng nhận đăng ký doanh nghiệp
           do Sở Kế hoạch và Đầu tư TP Hà Nội cấp lần đầu ngày 20/02/2019.
         </BaseTypography>

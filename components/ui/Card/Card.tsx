@@ -42,13 +42,13 @@ const Card: FC<CardProps> = ({ data }) => {
           </BaseFlexBox>
         </BaseFlexBox>
       </div>
-      <BaseTypography size={24}>{data.title}</BaseTypography>
-      <BaseTypography size={14}>
+      <BaseTypography size="24px">{data.title}</BaseTypography>
+      <BaseTypography size="14px">
         {data.subTitle}/{"Xanh đen"}
       </BaseTypography>
       <BaseFlexBox gap={16}>
         {data.price && (
-          <BaseTypography size={20}>
+          <BaseTypography size="20px">
             {data.priceCurrent.toLocaleString("vi-VN", {
               style: "currency",
               currency: "VND",
@@ -57,7 +57,7 @@ const Card: FC<CardProps> = ({ data }) => {
         )}
         {data.price && (
           <BaseTypography
-            size={20}
+            size="20px"
             color="grey-blue-80"
             className={styles.priceMain}
           >
@@ -69,7 +69,7 @@ const Card: FC<CardProps> = ({ data }) => {
         )}
 
         {percentPriceDown && (
-          <BaseTypography size={20} color="red">
+          <BaseTypography size="20px" color="red">
             -{percentPriceDown}%
           </BaseTypography>
         )}
