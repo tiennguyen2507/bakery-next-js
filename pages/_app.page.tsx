@@ -9,7 +9,6 @@ import {
   QueryClientProvider as TrpcQueryClientProvider,
 } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
-import PerfectScrollbar from "react-perfect-scrollbar";
 
 function App({ Component, pageProps }: AppProps) {
   const queryClient = useRef(new QueryClient());
@@ -25,9 +24,7 @@ function App({ Component, pageProps }: AppProps) {
         <TrpcQueryClientProvider client={trpcQueryClient}>
           <GlobalStateProvider>
             <LoadingRouter>
-              <PerfectScrollbar>
-                <Component {...pageProps} />
-              </PerfectScrollbar>
+              <Component {...pageProps} />
             </LoadingRouter>
           </GlobalStateProvider>
         </TrpcQueryClientProvider>

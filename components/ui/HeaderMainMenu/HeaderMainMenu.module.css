@@ -1,0 +1,32 @@
+.wrapper {
+  padding: 0px 64px;
+  height: 82px;
+  background-color: var(--color-black);
+}
+
+.link {
+  display: inline-block;
+  height: 30px;
+}
+
+.search {
+  background-color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 0px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    padding: 8px;
+  }
+  .input {
+    display: none;
+  }
+}

@@ -8,17 +8,25 @@
   padding: 16px;
 }
 
-.itemWrapper {
-  display: flex;
-  gap: 10px;
-}
-
-.input {
-  max-width: 50px;
+.product {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
 }
 
 @media (width >= 580px) {
   .slide {
     height: calc(100vh - 78px);
+  }
+
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1024px) {
+  .product {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

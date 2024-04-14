@@ -1,0 +1,28 @@
+.wrapper {
+  background-color: var(--color-primary);
+  border-top: 1px solid var(--color-white);
+  margin-top: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.title {
+  padding-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    border-top: none;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

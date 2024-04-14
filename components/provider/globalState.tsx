@@ -1,28 +1,27 @@
-import dynamic from "next/dynamic";
 import { FC, PropsWithChildren, createContext } from "react";
 
-const Notification = dynamic(() => import("components/features/Notification"), {
-  ssr: false,
-});
-
-type TypeglobalStateValue = {
-  isLogin: boolean;
-  setIsLogin: (value: boolean) => void;
+const defaultState = {
+  state: {
+    isLogin: false,
+    searchValue: "",
+  },
+  setIsLogin: (value: boolean) => {},
+  setSearchValue: (value: string) => {},
 };
 
-const defaulState = {
-  isLogin: false,
-  setIsLogin: () => {},
-};
-
-const GlobalState = createContext<TypeglobalStateValue>(defaulState);
+const GlobalState = createContext(defaultState);
 
 const GlobalStateProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [state, setState] = useState(defaultState.state);
 
   const globalStateValue = {
-    isLogin: isLogin,
-    setIsLogin: (value: boolean) => setIsLogin(value),
+    state: state,
+    setIsLogin: (value: boolean) => {
+      setState({ ...state, isLogin: value });
+    },
+    setSearchValue: (value: string) => {
+      setState({ ...state, searchValue: value });
+    },
   };
 
   return (

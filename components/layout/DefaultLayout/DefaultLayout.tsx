@@ -4,7 +4,10 @@ const DefaultLayout = <P extends object>(Component: FunctionComponent<P>) => {
   const Layout: FunctionComponent<P> = (props) => (
     <div className={styles.wrapper}>
       <Header />
-      <Component {...props} />
+      <main className={styles.content}>
+        <Component {...props} />
+      </main>
+      <FooterMain />
     </div>
   );
 

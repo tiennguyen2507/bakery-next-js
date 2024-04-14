@@ -7,11 +7,16 @@
     "BaseLoading": true,
     "BaseModal": true,
     "BaseTypography": true,
+    "Card": true,
+    "Container": true,
     "CountNumber": true,
     "FC": true,
+    "FooterMain": true,
     "FunctionComponent": true,
     "Header": true,
+    "HeaderMainMenu": true,
     "PickSize": true,
+    "SliderImage": true,
     "createRef": true,
     "forwardRef": true,
     "lazy": true,
@@ -32,6 +37,9 @@
     "useRouter": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true
+    "useTransition": true,
+    "FooterMainInfo": true,
+    "FooterMainLink": true,
+    "FooterMainTop": true
   }
 }

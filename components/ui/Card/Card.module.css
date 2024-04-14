@@ -1,0 +1,51 @@
+.cardImgContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImg {
+  width: 100%;
+  aspect-ratio: 3/4.5;
+  border-radius: 20px;
+}
+
+.cardImgHover {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.size {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(226, 235, 227, 0.8);
+  border-radius: 4px;
+  padding: 20px;
+  transform: translateY(50%);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.sizeItem {
+  padding: 10px 20px;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cardImgContainer:hover .cardImgHover {
+  opacity: 1;
+}
+
+.cardImgContainer:hover .size {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.priceMain {
+  text-decoration: line-through;
+}

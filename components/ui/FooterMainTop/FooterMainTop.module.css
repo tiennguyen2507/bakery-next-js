@@ -1,0 +1,41 @@
+.wrapper {
+  align-items: center;
+}
+
+.commend {
+  max-width: 500px;
+}
+
+.contactDescription {
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .contact {
+    order: 1;
+  }
+
+  .commend {
+    max-width: initial;
+    order: 2;
+  }
+
+  .socialNetwork {
+    order: 3;
+  }
+
+  .socialNetwork,
+  .contact,
+  .commend {
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 0.6px solid var(--color-white);
+  }
+}

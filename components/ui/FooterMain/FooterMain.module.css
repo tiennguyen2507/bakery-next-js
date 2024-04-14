@@ -1,0 +1,14 @@
+.wrapper {
+  background: var(--color-primary);
+  padding: 30px 60px;
+}
+
+.socialImg {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+}
