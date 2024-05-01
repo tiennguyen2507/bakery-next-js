@@ -1,0 +1,27 @@
+.root {
+  font-size: 12px;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+.root td,
+.root th {
+  text-align: center;
+  padding: 8px;
+}
+.root td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 12px;
+}
+.root thead th {
+  color: #ffffff;
+  background: #4fc3a1;
+}
+.root thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+.root tr:nth-child(even) {
+  background: #f8f8f8;
+}

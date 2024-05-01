@@ -41,6 +41,7 @@
     "FooterMainInfo": true,
     "FooterMainLink": true,
     "FooterMainTop": true,
-    "SideBar": true
+    "SideBar": true,
+    "BaseTable": true
   }
 }

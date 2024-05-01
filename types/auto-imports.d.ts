@@ -11,6 +11,7 @@ declare global {
   const BaseInput: typeof import('../components/ui/BaseInput/index')['default']
   const BaseLoading: typeof import('../components/ui/BaseLoading/index')['default']
   const BaseModal: typeof import('../components/ui/BaseModal/index')['default']
+  const BaseTable: typeof import('../components/ui/BaseTable/index')['default']
   const BaseTypography: typeof import('../components/ui/BaseTypography/index')['default']
   const Card: typeof import('../components/ui/Card/index')['default']
   const Container: typeof import('../components/Container/index')['default']
