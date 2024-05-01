@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const baseURL = "https://bakery-nest-be-production.up.railway.app";
+const baseURL = "http://localhost:4000";
 const httpRequest = axios.create({
   baseURL,
   headers: {

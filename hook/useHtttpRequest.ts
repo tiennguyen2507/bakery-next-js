@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import Cookies from "js-cookie";
 import { GetServerSidePropsContext } from "next";
 
-const baseURL = "https://bakery-nest-be-production.up.railway.app";
+const baseURL = "http://localhost:4000";
 
 export const useHttpRequest = () => {
   const router = useRouter();
@@ -37,6 +37,7 @@ export const useHttpRequest = () => {
 
 export const useHttpRequestGssp = (context?: GetServerSidePropsContext) => {
   const token = context?.req.cookies["token"];
+
   return axios.create({
     baseURL,
     headers: {
@@ -45,3 +46,6 @@ export const useHttpRequestGssp = (context?: GetServerSidePropsContext) => {
     },
   });
 };
+
+export const useHttpRequestCustom = (context?: GetServerSidePropsContext) =>
+  context ? useHttpRequestGssp(context) : useHttpRequest();

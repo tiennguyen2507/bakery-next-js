@@ -22,6 +22,7 @@ declare global {
   const Header: typeof import('../components/ui/Header/index')['default']
   const HeaderMainMenu: typeof import('../components/ui/HeaderMainMenu/index')['default']
   const PickSize: typeof import('../components/features/PickSize/index')['default']
+  const SideBar: typeof import('../components/ui/SideBar/index')['default']
   const SliderImage: typeof import('../components/ui/SliderImage/index')['default']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']

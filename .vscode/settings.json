@@ -13,5 +13,6 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.accessibilitySupport": "on",
-  "audioCues.volume": 0
+  "audioCues.volume": 0,
+  "cSpell.words": ["clsx"]
 }

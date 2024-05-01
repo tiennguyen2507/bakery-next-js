@@ -1,55 +1,31 @@
-import Cookies from "js-cookie";
 import styles from "./UserProfile.module.css";
 
-const UserProfile: React.FC = ({ user }: any) => {
-  const router = useRouter();
-  const onLogOut = (): void => {
-    Cookies.remove("token");
-    router.push("/sign-in");
-  };
-  useEffect(() => {
-    if (!user) {
-      onLogOut();
-    }
-  }, []);
-
-  if (!user) {
-    return null;
-  }
-
-  return (
-    <BaseFlexBox
-      direction="column"
-      align="center"
-      justify="center"
-      gap={12}
-      className={styles.wrapper}
-    >
-      <BaseTypography size="20px" weight={600} color="woodsmoke" align="center">
-        {user?.firstName} {user?.lastName}
-      </BaseTypography>
-      {user?.id && <InfoItem label="ID" icon="user" value={user.id} />}
-      {user?.email && (
-        <InfoItem label="Email" icon="email" value={user.email} />
-      )}
-      {user?.created_at && (
-        <InfoItem label="Ngày tạo" icon="clock" value={user.created_at} />
-      )}
-      {user?.updated_at && (
-        <InfoItem
-          label="Ngày cập nhật mới nhất"
-          icon="history"
-          value={user.updated_at}
-        />
-      )}
-      <BaseButton
-        label="Đăng xuất"
-        className={styles.btnLogOut}
-        onClick={onLogOut}
+const UserProfile: React.FC = ({ user }: any) => (
+  <BaseFlexBox
+    direction="column"
+    align="center"
+    justify="center"
+    gap={12}
+    className={styles.wrapper}
+  >
+    <BaseTypography size="20px" weight={600} color="woodsmoke" align="center">
+      {user?.firstName} {user?.lastName}
+    </BaseTypography>
+    {user?.id && <InfoItem label="ID" icon="user" value={user.id} />}
+    {user?.email && <InfoItem label="Email" icon="email" value={user.email} />}
+    {user?.created_at && (
+      <InfoItem label="Ngày tạo" icon="clock" value={user.created_at} />
+    )}
+    {user?.updated_at && (
+      <InfoItem
+        label="Ngày cập nhật mới nhất"
+        icon="history"
+        value={user.updated_at}
       />
-    </BaseFlexBox>
-  );
-};
+    )}
+    <BaseButton label="Đăng xuất" className={styles.btnLogOut} />
+  </BaseFlexBox>
+);
 
 type InfoItemProps = {
   label: string;

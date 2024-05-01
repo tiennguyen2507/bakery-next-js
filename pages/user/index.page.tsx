@@ -1,18 +1,8 @@
 import { GetServerSideProps } from "next";
 import { PageConfig } from "config/configPage";
-import { userAuthGsspApi } from "api/auth.api";
 import UserProfile from "./UserProfile";
 import DefaultLayout from "components/layout/DefaultLayout";
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { authGetInfo } = userAuthGsspApi(context);
-  try {
-    const userInfo = await authGetInfo();
-    return { props: { user: userInfo.data } };
-  } catch (error) {
-    return { props: {} };
-  }
-};
+import useFetchServer from "hook/useFetchServer";
 
 const UserProfilePage = UserProfile;
 

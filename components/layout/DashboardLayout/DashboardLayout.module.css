@@ -1,0 +1,9 @@
+.root {
+  height: 100vh;
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  min-height: calc(100vh - 100px);
+}

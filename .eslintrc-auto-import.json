@@ -40,6 +40,7 @@
     "useTransition": true,
     "FooterMainInfo": true,
     "FooterMainLink": true,
-    "FooterMainTop": true
+    "FooterMainTop": true,
+    "SideBar": true
   }
 }
