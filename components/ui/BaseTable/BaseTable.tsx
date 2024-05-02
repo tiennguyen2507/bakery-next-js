@@ -1,12 +1,12 @@
 import React, { CSSProperties } from "react";
 import styles from "./BaseTable.module.css";
-// import clsx from "clsx";
 
 type BaseTableProps = {
   columns: Array<{
     name: string;
-    key: string;
+    key?: string;
     width?: CSSProperties["width"];
+    render?: (value: any, record: any, index: number) => React.ReactNode;
   }>;
   dataSource: Array<any>;
 };
@@ -27,10 +27,14 @@ const BaseTable: React.FC<BaseTableProps> = ({ columns, dataSource }) => {
         </tr>
       </thead>
       <tbody>
-        {dataSource.map((value) => (
+        {dataSource.map((record, indexRecord) => (
           <tr>
-            {columns.map(({ key }, index) => (
-              <td key={index}>{value[key]}</td>
+            {columns.map(({ key, render, name }, index) => (
+              <td key={index}>
+                {render
+                  ? render(record[key || name], record, indexRecord)
+                  : record[key || name]}
+              </td>
             ))}
           </tr>
         ))}
